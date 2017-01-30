@@ -13,6 +13,7 @@ We have also done some research on a working physics engine to get a better idea
 
 
 Annotated bibliography:
+
 https://www.youtube.com/watch?v=qtpaauuGx-Y - slow motion demonstration of brachistochrone curve
 
 https://www.youtube.com/watch?v=Z-qaXZeJT4s  - physical demonstration of the b-curve
