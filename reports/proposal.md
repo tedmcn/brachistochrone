@@ -14,10 +14,15 @@ We have also done some research on a working physics engine to get a better idea
 
 Annotated bibliography:
 https://www.youtube.com/watch?v=qtpaauuGx-Y - slow motion demonstration of brachistochrone curve
+
 https://www.youtube.com/watch?v=Z-qaXZeJT4s  - physical demonstration of the b-curve
+
 https://www.youtube.com/watch?v=_OAYRV5fjuE&t=6633s - learn opengl in two hours ( I found this video helpful for opengl beginners)
+
 http://mathworld.wolfram.com/BrachistochroneProblem.html - Resource which describes the math behind deriving the curve
+
 https://github.com/bulletphysics/bullet3 - sample working physics engine that can be used to test our simulation before we get our own physics engine working
+
 http://www.opengl-tutorial.org/beginners-tutorials/ - opengl tutorials 
 
 
