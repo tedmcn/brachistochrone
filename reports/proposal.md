@@ -13,13 +13,23 @@ For this project, the main resource we will be using is OpenGL. We want to use O
 
 
 Annotated bibliography:
+
 https://www.youtube.com/watch?v=skvnj67YGmw&t=690s - Vsauce channel’s physical demonstration of the cycloid with Adam Savage. This is the video where our team found inspiration for this project.
+
 https://www.youtube.com/watch?v=qtpaauuGx-Y - Slow motion demonstration of brachistochrone curve and tautochrone curve.
+
 https://www.youtube.com/watch?v=Z-qaXZeJT4s  - Another physical demonstration of the brachistochrone
+
 https://www.youtube.com/watch?v=_OAYRV5fjuE&t=6633s - OpenGL tutorial for beginners. This video allowed us to learn OpenGL in two hours.
+
 https://www.youtube.com/watch?v=IkINbW_NMNk Video for future use if we have to make a powerpoint presentation to introduce how a cycloid is form. A visual demonstration can engage the audience more into our project. 
-http://www.opengl-tutorial.org/beginners-tutorials/ - OpenGL tutorials for beginners. Since we are all new to using OpenGL, we will use this link as a main resource. http://mathworld.wolfram.com/BrachistochroneProblem.html - Resource which describes the math behind deriving the curve. We are still using this resource to understand the math behind the cycloid.
+
+http://www.opengl-tutorial.org/beginners-tutorials/ - OpenGL tutorials for beginners. Since we are all new to using OpenGL, we will use this link as a main resource. 
+
+http://mathworld.wolfram.com/BrachistochroneProblem.html - Resource which describes the math behind deriving the curve. We are still using this resource to understand the math behind the cycloid.
+
 https://github.com/bulletphysics/bullet3 - Sample working physics engine that can be used to test our simulation before we get our own physics engine working. Our team will be working on a physics engine during sprint2. 
+
 https://www.blender.org/ - We will be using Blender software to make the cycloid ramp. We selected this resource because three of our team members have used Blender prior to this project.
 
 4) Link to view our product backlog: https://trello.com/b/my1FuYhe/softsysdociledolphins   Through in class conversation on Monday 1/30 and online conversation, our team figured out the product backlog for the next two sprints based on what we have accomplished by the end of sprint 1. 
