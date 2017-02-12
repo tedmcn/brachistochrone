@@ -1,0 +1,1 @@
+gcc -o run run.c -lglut -lGLU -lGL -lm && ./run
