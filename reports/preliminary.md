@@ -26,7 +26,7 @@ Link to blender rendered animation:  https://youtu.be/gyFq77QwwsM
 
 **4) Demonstrate that you have assembled the resources you need to complete the project.  One good way to do that is to update your annotated bibliography (with a pointer to each resource and a few sentences that describe the content) from the proposal.**
 
-<<Still working on how to annotate our resource bibliography correctly - one way is to check how Allen annotates his bibliography https://github.com/AllenDowney?tab=repositories>>
+working on how to annotate our resource bibliography correctly - one way is to check how Allen annotates his bibliography https://github.com/AllenDowney?tab=repositories
 
 
 **5) Present a product backlog for the next sprint that represents a concrete plan that will keep the entire team productively engaged and get you to your stated goals (this can be a link to your Trello board). If you had trouble putting together evidence for your cards in the previous sprints, adjust your new cards accordingly.**
