@@ -8,8 +8,6 @@ Software Systems
 
 Project 1 Preliminary Report
 
-Link to Proposal https://github.com/tedmcn/SoftSysDocileDolphins/blob/master/reports/proposal.md
-
 ### 1) State the goal of your project, ideally including a lower bound you are confident you can achieve and a stretch goal that is more ambitious.  This can be an updated version of the section you wrote in the proposal.
 
 The goal of our project is to visually demonstrate the Brachistochrone curve using OpenGL. Our team has been able to achieve one part of the lower bound, which is being able to visually demonstrate the Brachistochrone curve using the Blender software’s physics engine (demo: https://youtu.be/gyFq77QwwsM)  . 
@@ -34,7 +32,7 @@ Link to gravity demo from our engine: https://youtu.be/WilNkjOIcA0
 
 ### 4) Demonstrate that you have assembled the resources you need to complete the project.  One good way to do that is to update your annotated bibliography (with a pointer to each resource and a few sentences that describe the content) from the proposal.
 
-Annotated bibliography:
+*Annotated bibliography:*
 
 http://www.thingiverse.com/thing:2051141 - B-curve file for blender
 
