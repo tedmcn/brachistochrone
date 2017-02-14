@@ -5,7 +5,7 @@ Members: Cleophas Kalekem, Ted McNulty, Chong Swee, Jiaxuan (Amy) Wu
 Software Systems
 
 2/13/2017
-[Link to Proposal](/proposal.md)
+[Link to Proposal](proposal.md)
 
 #Project 1 Preliminary Report
 
