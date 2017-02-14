@@ -26,7 +26,9 @@ https://docs.google.com/spreadsheets/d/1zJcwGtZQ8o_Qhf2SpaiDqXceUJUjHyq4G1VVt83R
 
 
 Code in github: https://github.com/tedmcn/SoftSysDocileDolphins/tree/master/src
+
 Link to blender rendered animation:  https://youtu.be/gyFq77QwwsM
+
 Link to gravity demo from our engine: https://youtu.be/WilNkjOIcA0
 
 **4) Demonstrate that you have assembled the resources you need to complete the project.  One good way to do that is to update your annotated bibliography (with a pointer to each resource and a few sentences that describe the content) from the proposal.**
