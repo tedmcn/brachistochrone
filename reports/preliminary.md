@@ -10,7 +10,7 @@ Project 1 Preliminary Report
 
 Link to Proposal https://github.com/tedmcn/SoftSysDocileDolphins/blob/master/reports/proposal.md
 
-1) State the goal of your project, ideally including a lower bound you are confident you can achieve and a stretch goal that is more ambitious.  This can be an updated version of the section you wrote in the proposal.
+# 1) State the goal of your project, ideally including a lower bound you are confident you can achieve and a stretch goal that is more ambitious.  This can be an updated version of the section you wrote in the proposal.
 
 The goal of our project is to visually demonstrate the Brachistochrone curve using OpenGL. Our team has been able to achieve one part of the lower bound, which is being able to visually demonstrate the Brachistochrone curve using the Blender software’s physics engine (demo: https://youtu.be/gyFq77QwwsM)  . 
 
@@ -18,13 +18,13 @@ The second part of the lower bound we are currently in the process of developing
 
 Our stretch goals are still the same: to include other factors like friction and angular momentum, to visually demonstrate other curves that stem from cycloids, to visually demonstrate real world applications of cycloids/curves, and to think more in depth about an interactive GUI for the project. 
 
-2) Include a list of each project-related card you completed in Sprints 1 and 2. Annotate each card with a pointer to concrete evidence that the card has been completed (e.g. link to committed code, notes from a reading). If you have cards you can't provide evidence for, or work you did that doesn't have a card, make a note of it and use it to refine your cards for the next sprint.
+# 2) Include a list of each project-related card you completed in Sprints 1 and 2. Annotate each card with a pointer to concrete evidence that the card has been completed (e.g. link to committed code, notes from a reading). If you have cards you can't provide evidence for, or work you did that doesn't have a card, make a note of it and use it to refine your cards for the next sprint.
 
 We used an excel sheet to keep track of our project tasks completed in Sprints 1 and 2.
 
 https://docs.google.com/spreadsheets/d/1zJcwGtZQ8o_Qhf2SpaiDqXceUJUjHyq4G1VVt83ROs0/edit?usp=sharing
 
-3) Show preliminary results from your code. Depending on the project this could be a short demo video, example text sequence of commands and outputs, or some other form. Looking ahead to your final report, (updated versions of) these can serve as your usage examples.
+# 3) Show preliminary results from your code. Depending on the project this could be a short demo video, example text sequence of commands and outputs, or some other form. Looking ahead to your final report, (updated versions of) these can serve as your usage examples.
 
 Code in github: https://github.com/tedmcn/SoftSysDocileDolphins/tree/master/src
 
@@ -32,7 +32,7 @@ Link to blender rendered animation:  https://youtu.be/gyFq77QwwsM
 
 Link to gravity demo from our engine: https://youtu.be/WilNkjOIcA0
 
-4) Demonstrate that you have assembled the resources you need to complete the project.  One good way to do that is to update your annotated bibliography (with a pointer to each resource and a few sentences that describe the content) from the proposal.
+# 4) Demonstrate that you have assembled the resources you need to complete the project.  One good way to do that is to update your annotated bibliography (with a pointer to each resource and a few sentences that describe the content) from the proposal.
 
 Annotated bibliography:
 
@@ -60,7 +60,7 @@ https://www.youtube.com/playlist?list=PLEETnX-uPtBXm1KEr_2zQ6K_0hoGH6JJ0 - This 
 
 http://openglut.sourceforge.net/ - This is the docs for Open GL Utility Toolkit which is a nice OpenGL library that will take care of a lot of the redundant work required when working with OpenGL. It comes with a  lot of functions that make creating the window and specifying window options much easier.
 
-5) Present a product backlog for the next sprint that represents a concrete plan that will keep the entire team productively engaged and get you to your stated goals (this can be a link to your Trello board). If you had trouble putting together evidence for your cards in the previous sprints, adjust your new cards accordingly.
+# 5) Present a product backlog for the next sprint that represents a concrete plan that will keep the entire team productively engaged and get you to your stated goals (this can be a link to your Trello board). If you had trouble putting together evidence for your cards in the previous sprints, adjust your new cards accordingly.
 
 https://trello.com/b/my1FuYhe/softsysdociledolphins
 
