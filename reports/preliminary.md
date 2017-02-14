@@ -34,29 +34,29 @@ Link to gravity demo from our engine: https://youtu.be/WilNkjOIcA0
 
 *Annotated bibliography:*
 
-http://www.thingiverse.com/thing:2051141 - B-curve file for blender
+* http://www.thingiverse.com/thing:2051141 - B-curve file for blender
 
-https://www.youtube.com/watch?v=skvnj67YGmw&t=690s - Vsauce channel’s physical demonstration of the cycloid with Adam Savage. This is the video where our team found inspiration for this project.
+* https://www.youtube.com/watch?v=skvnj67YGmw&t=690s - Vsauce channel’s physical demonstration of the cycloid with Adam Savage. This is the video where our team found inspiration for this project.
 
-https://www.youtube.com/watch?v=qtpaauuGx-Y : This video shows a slow motion of the brachistochrone curve. We found this useful in understanding exactly how the curve works. The video gives a visual illustration of how the balls move down the ramp and which ball reaches the bottom of the ramp the fastest.
+* https://www.youtube.com/watch?v=qtpaauuGx-Y : This video shows a slow motion of the brachistochrone curve. We found this useful in understanding exactly how the curve works. The video gives a visual illustration of how the balls move down the ramp and which ball reaches the bottom of the ramp the fastest.
 
-https://www.youtube.com/watch?v=Z-qaXZeJT4s - This is another physical demonstration of the brachistochrone
+* https://www.youtube.com/watch?v=Z-qaXZeJT4s - This is another physical demonstration of the brachistochrone
 
-https://www.youtube.com/watch?v=_OAYRV5fjuE&t=6633s: OpenGL tutorial for beginners. This video allowed us to learn OpenGL in two hours.
+* https://www.youtube.com/watch?v=_OAYRV5fjuE&t=6633s: OpenGL tutorial for beginners. This video allowed us to learn OpenGL in two hours.
 
-https://www.youtube.com/watch?v=IkINbW_NMNk: This is a video we will incorporate if we have to make a powerpoint presentation to introduce how a cycloid is form. A visual demonstration can engage the audience more into our project.
+* https://www.youtube.com/watch?v=IkINbW_NMNk: This is a video we will incorporate if we have to make a powerpoint presentation to introduce how a cycloid is form. A visual demonstration can engage the audience more into our project.
 
-http://www.opengl-tutorial.org/beginners-tutorials/ - OpenGL tutorials for beginners. Since we are all new to using OpenGL, we will use this link as a main resource.
+* http://www.opengl-tutorial.org/beginners-tutorials/ - OpenGL tutorials for beginners. Since we are all new to using OpenGL, we will use this link as a main resource.
 
-http://mathworld.wolfram.com/BrachistochroneProblem.html - This is the resource which we use to understand the math behind deriving the curve. 
+* http://mathworld.wolfram.com/BrachistochroneProblem.html - This is the resource which we use to understand the math behind deriving the curve. 
 
-https://github.com/bulletphysics/bullet3 - We used the Bullet physics engine to understand physics engines before we started customizing our own. We used other physics engines, but this was the main one. 
+* https://github.com/bulletphysics/bullet3 - We used the Bullet physics engine to understand physics engines before we started customizing our own. We used other physics engines, but this was the main one. 
 
-https://www.blender.org/ - We used Blender software to import the cycloid ramp. We selected this resource because three of our team members have used Blender prior to this project. We used the Blender physics engine to test the physics for our B curve. 
+* https://www.blender.org/ - We used Blender software to import the cycloid ramp. We selected this resource because three of our team members have used Blender prior to this project. We used the Blender physics engine to test the physics for our B curve. 
 
-https://www.youtube.com/playlist?list=PLEETnX-uPtBXm1KEr_2zQ6K_0hoGH6JJ0 - This is a really great video tutorial that covers making a physics engine from scratch. It covers most of the basic topics and even does some example coding on the engine.
+* https://www.youtube.com/playlist?list=PLEETnX-uPtBXm1KEr_2zQ6K_0hoGH6JJ0 - This is a really great video tutorial that covers making a physics engine from scratch. It covers most of the basic topics and even does some example coding on the engine.
 
-http://openglut.sourceforge.net/ - This is the docs for Open GL Utility Toolkit which is a nice OpenGL library that will take care of a lot of the redundant work required when working with OpenGL. It comes with a  lot of functions that make creating the window and specifying window options much easier.
+* http://openglut.sourceforge.net/ - This is the docs for Open GL Utility Toolkit which is a nice OpenGL library that will take care of a lot of the redundant work required when working with OpenGL. It comes with a  lot of functions that make creating the window and specifying window options much easier.
 
 ### 5) Present a product backlog for the next sprint that represents a concrete plan that will keep the entire team productively engaged and get you to your stated goals (this can be a link to your Trello board). If you had trouble putting together evidence for your cards in the previous sprints, adjust your new cards accordingly.
 
