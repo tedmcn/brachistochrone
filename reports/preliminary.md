@@ -64,6 +64,6 @@ https://trello.com/b/my1FuYhe/softsysdociledolphins
 
 6) Enumerate potential roadblocks and ways instructors can help.  Do you need materials? Do you have show-stopping questions you have not been able to answer?
 
---Problem with collaborating on the physics engine code because it contains several pieces
+..* Problem with collaborating on the physics engine code because it contains several pieces
 
---We are going to need to use C++ to properly represent objects in our 3D environment so we may need some resources regarding C objects and classes.
+..* We are going to need to use C++ to properly represent objects in our 3D environment so we may need some resources regarding C objects and classes.
