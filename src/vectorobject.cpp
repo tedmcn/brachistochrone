@@ -16,10 +16,13 @@ class Vectorobject {
 public:
 	
 	Vectorobject average(Vectorobject v);
+    float* toDegree();
 
 protected:
     
     float coordinates[3];
+    
+private:
     
 }
 
