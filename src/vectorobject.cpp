@@ -7,7 +7,8 @@
 //IE A vector of values {0,1,0} is representing straight up because
 //From the origin {0,0,0} to {0,1,0} is a move of 1 up in the y direction.
 //
-//More complex vectors can 
+//More complex vectors can be represented with coordinates further from the origin
+//such as {1,2,0} (x=2y graph) which is different from {1,1,0} (which is x=y graph)
 
 
 class Vectorobject {
