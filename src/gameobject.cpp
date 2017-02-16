@@ -9,17 +9,19 @@ public:
 	//Deconstructor
 	~Gameobject();
 
-	draw();
-	intersect();	
+	void draw();
+	bool intersect();	
+	Gameobject below();
 
-	setV(float velocity);
-	getV();
 
-	setP(float x1, float y1, float z1);
-	getP();
+	void setV(float velocity);
+	*float getV();
 
-	setD(float x1, float y1, float z1);
-	getD();
+	void setP(float x1, float y1, float z1);
+	*float getP();
+
+	void setD(float x1, float y1, float z1);
+	*float getD();
 
 	
 
@@ -82,11 +84,16 @@ float* Gameobject::getD(){
 }
 
 //Different for every child class
-void draw(){
+void Gameobject::draw(){
 }
 
 
 //Return true if the two objects have points where they overlap
-bool intersect(Gameobject obj){
+bool Gameobject::intersect(Gameobject obj){
 	return false;
+}
+
+//Returns the object that is directly below this object (any distance)
+Gameobject Gameobject::below(){
+	return null;
 }
