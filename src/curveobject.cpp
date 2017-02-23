@@ -1,12 +1,4 @@
-class Curveobject : public Gameobject{
-
-public:
-	
-	void draw();
-	bool intersect();
-
-}
-
+#include "curveobject.h"
 
 void Curveobject::draw(){
 }

@@ -1,7 +1,12 @@
 #include <GL/glut.h>
 #include <stdlib.h> 
 #include <stdio.h>
- 
+
+#include "physics.h"
+#include "vectorobject.h"
+#include "sphereobject.h"
+//#include "curveobject.h"
+
 
 GLdouble translateSphere[] = {0.0,1.2,-6};
 
@@ -39,6 +44,10 @@ static void display(void)
     glColor3d(1,0,0); 	//Draw in red
 
 
+    // Sphereobject s = Sphereobject();
+    // s.draw();
+
+
     //Add a sphere 
     glPushMatrix();
         glTranslated(translateSphere[0],translateSphere[1],translateSphere[2]);
@@ -67,12 +76,15 @@ const GLfloat high_shininess[] = { 100.0f };
  
 int main(int argc, char *argv[])
 {
+   
+    Physics p = Physics();
+
     glutInit(&argc, argv);
     glutInitWindowSize(640,480);
     glutInitWindowPosition(10,10);
     glutInitDisplayMode(GLUT_RGB | GLUT_DOUBLE | GLUT_DEPTH); 
  
-    glutCreateWindow("Programming Techniques - 3D Spheres"); 
+    glutCreateWindow("B-Curve"); 
  
     glutReshapeFunc(resize);
     glutDisplayFunc(display); 
