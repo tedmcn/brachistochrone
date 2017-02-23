@@ -1,4 +1,6 @@
-#include "vectorobject.h"
+#ifndef vectorobject_h
+#define vectorobject_h
+#endif
 
 //Averages two different vectors
 //

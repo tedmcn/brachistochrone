@@ -1,6 +1,10 @@
 #include <time.h>
 #include <stdio.h>
-#include "physics.h"
+
+
+#ifndef physics_h
+#define physics_h
+#endif
 
 //Constructor
 Physics::Physics(){

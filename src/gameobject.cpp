@@ -1,4 +1,6 @@
-#include "gameobject.h"
+#ifndef gameobject_h
+#define gameobject_h
+#endif
 
 //Constructor
 Gameobject::Gameobject(){
