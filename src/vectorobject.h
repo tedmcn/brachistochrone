@@ -18,6 +18,10 @@ public:
 	Vectorobject average(Vectorobject v);
     float* toDegree();
 
+    float* getCoordinates();
+    void setCoordinates();
+    
+
 protected:
     
     float coordinates[3];

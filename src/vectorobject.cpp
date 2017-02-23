@@ -7,6 +7,11 @@
 //up and straight to the side vectors, resulting in a x=y vector.
 Vectorobject Vectorobject::average(Vectorobject v){
     
+    float x = (v.coordinates[0]+coordinates[0])/2;
+    float y = (v.coordinates[1]+coordinates[1])/2;
+    float z = (v.coordinates[2]+coordinates[2])/2;
+    
+    return {x,y,z};
 }
 
 //Returns the vector represented in degrees as 2 floats from 0-360
@@ -19,4 +24,12 @@ Vectorobject Vectorobject::average(Vectorobject v){
 //represent the y and z axies (ie around the sphere vertically)
 float* Vectorobject::toDegree(){
 
+}
+
+float* Vectorobject::getCoordinates(){
+    return coordinates;
+}
+
+void Vectorobject::setCoordinates(float* c){
+    coordinates=c;
 }

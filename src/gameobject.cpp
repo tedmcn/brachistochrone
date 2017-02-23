@@ -48,6 +48,19 @@ float* Gameobject::getD(){
 void Gameobject::draw(){
 }
 
+//Set the Direction of the object
+void Gameobject::setA(float x, float y, float z){
+	a[0]=x;
+	a[1]=y;
+	a[2]=z;
+}
+
+//Read the direction of the object
+float* Gameobject::getA(){
+	return a;
+}
+
+
 
 // //Return true if the two objects have points where they overlap
 // bool Gameobject::intersect(Gameobject obj){

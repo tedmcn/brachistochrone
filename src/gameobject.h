@@ -23,7 +23,8 @@ public:
 	void setD(float x1, float y1, float z1);
 	float* getD();
 
-	
+	void setA(float x1, float y1, float z1);
+	float* getA();
 
 //Everything here can only be used within the class
 protected:
@@ -35,6 +36,7 @@ protected:
 	float d[3];	//Direction, represented with a vector from the
 			//origin to the direction of this point
 			
+	float a[3]; //Acceleration of the ball
 	
 
 };

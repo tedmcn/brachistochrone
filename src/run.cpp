@@ -2,10 +2,31 @@
 #include <stdlib.h> 
 #include <stdio.h>
 
-#include "physics.h"
-#include "vectorobject.h"
-#include "sphereobject.h"
-//#include "curveobject.h"
+
+#ifndef physics_h
+#define physics_h
+#endif
+
+#ifndef vectorobject_h
+#define vectorobject_h
+#endif
+
+#ifndef sphereobject_h
+#define sphereobject_h
+#endif
+
+#ifndef curveobject_h
+#define curveobject_h
+#endif
+
+#ifndef gameobject_h
+#define gameobject_h
+#endif
+
+// #include "physics.h"
+// #include "vectorobject.h"
+// #include "sphereobject.h"
+// #include "curveobject.h"
 
 
 GLdouble translateSphere[] = {0.0,1.2,-6};
