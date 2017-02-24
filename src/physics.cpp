@@ -3,7 +3,7 @@
 
 
 #ifndef physics_h
-#define physics_h
+#include "physics.h"
 #endif
 
 //Constructor

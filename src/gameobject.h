@@ -17,7 +17,7 @@ public:
 	void setV(float velocity);
 	float getV();
 
-	void setP(float x1, float y1, float z1);
+	void setP(float* pos);
 	float* getP();
 
 	void setD(float x1, float y1, float z1);

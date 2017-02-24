@@ -2,34 +2,13 @@
 #include <stdlib.h> 
 #include <stdio.h>
 
-
-#ifndef physics_h
-#define physics_h
-#endif
-
-#ifndef vectorobject_h
-#define vectorobject_h
-#endif
-
-#ifndef sphereobject_h
-#define sphereobject_h
-#endif
-
-#ifndef curveobject_h
-#define curveobject_h
-#endif
-
-#ifndef gameobject_h
-#define gameobject_h
-#endif
-
-// #include "physics.h"
-// #include "vectorobject.h"
-// #include "sphereobject.h"
-// #include "curveobject.h"
+#include "physics.h"
+#include "vectorobject.h"
+#include "sphereobject.h"
+//#include "curveobject.h"
 
 
-GLdouble translateSphere[] = {0.0,1.2,-6};
+GLfloat translateSphere[] = {0.0,2,-10};
 
 static void resize(int width, int height)
 {
@@ -65,7 +44,6 @@ static void display(void)
     glColor3d(1,0,0); 	//Draw in red
 
 
-    // Sphereobject s = Sphereobject();
     // s.draw();
 
 
@@ -98,13 +76,18 @@ const GLfloat high_shininess[] = { 100.0f };
 int main(int argc, char *argv[])
 {
    
-    Physics p = Physics();
-
     glutInit(&argc, argv);
     glutInitWindowSize(640,480);
     glutInitWindowPosition(10,10);
     glutInitDisplayMode(GLUT_RGB | GLUT_DOUBLE | GLUT_DEPTH); 
  
+
+    Physics p = Physics();
+    Sphereobject s = Sphereobject();
+    s.setP(translateSphere);
+
+    printf("%f\n", s.getP()[1]);
+
     glutCreateWindow("B-Curve"); 
  
     glutReshapeFunc(resize);
@@ -132,7 +115,6 @@ int main(int argc, char *argv[])
     glMaterialfv(GL_FRONT, GL_SPECULAR,  mat_specular);
     glMaterialfv(GL_FRONT, GL_SHININESS, high_shininess); 
  
-
     glutIdleFunc(display);
 
     glutMainLoop(); 

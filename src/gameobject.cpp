@@ -1,5 +1,5 @@
 #ifndef gameobject_h
-#define gameobject_h
+#include "gameobject.h"
 #endif
 
 //Constructor
@@ -23,10 +23,10 @@ float Gameobject::getV(){
 }
 
 //Set the game objects main coordinates
-void Gameobject::setP(float x1, float y1, float z1){
-	p[0]=x1;
-	p[1]=y1;
-	p[2]=z1;
+void Gameobject::setP(float* pos){
+	p[0]=pos[0];
+	p[1]=pos[1];
+	p[2]=pos[2];
 }
 
 //Read the game objects coordinates

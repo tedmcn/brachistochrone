@@ -1,5 +1,5 @@
 #ifndef vectorobject_h
-#define vectorobject_h
+#include "vectorobject.h"
 #endif
 
 //Averages two different vectors
@@ -12,9 +12,21 @@ Vectorobject Vectorobject::average(Vectorobject v){
     float x = (v.coordinates[0]+coordinates[0])/2;
     float y = (v.coordinates[1]+coordinates[1])/2;
     float z = (v.coordinates[2]+coordinates[2])/2;
-    
-    return {x,y,z};
+    float coords[3]={x,y,z};
+    Vectorobject new_v = Vectorobject(coords);
+    return new_v;
 }
+
+Vectorobject::Vectorobject(float* c){
+	coordinates[0]=c[0];
+	coordinates[1]=c[1];
+	coordinates[2]=c[2];
+}
+
+Vectorobject::~Vectorobject(){
+
+}
+
 
 //Returns the vector represented in degrees as 2 floats from 0-360
 //
@@ -33,5 +45,7 @@ float* Vectorobject::getCoordinates(){
 }
 
 void Vectorobject::setCoordinates(float* c){
-    coordinates=c;
+    coordinates[0]=c[0];
+    coordinates[1]=c[1];
+    coordinates[2]=c[2];
 }

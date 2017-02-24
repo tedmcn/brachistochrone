@@ -15,11 +15,14 @@ class Vectorobject {
 
 public:
 	
+	Vectorobject(float* c);
+	~Vectorobject();
+
 	Vectorobject average(Vectorobject v);
     float* toDegree();
 
     float* getCoordinates();
-    void setCoordinates();
+    void setCoordinates(float* c);
     
 
 protected:
