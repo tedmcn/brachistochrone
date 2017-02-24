@@ -8,7 +8,10 @@
 //#include "curveobject.h"
 
 
-GLfloat translateSphere[] = {0.0,2,-10};
+GLfloat translateSphere[] = {0.0,0,-15};
+Sphereobject s;
+Physics p;
+
 
 static void resize(int width, int height)
 {
@@ -23,10 +26,6 @@ static void resize(int width, int height)
     glLoadIdentity() ;
 } 
  
-void update(void){
- translateSphere[1]-=0.01; //Send the object down
-}
-
 
 //This function is used on every frame, it is used to draw the 3d environment onto the screen
 static void display(void)
@@ -44,18 +43,13 @@ static void display(void)
     glColor3d(1,0,0); 	//Draw in red
 
 
-    // s.draw();
+    //Draw the sphere
+    s.draw();
 
-
-    //Add a sphere 
-    glPushMatrix();
-        glTranslated(translateSphere[0],translateSphere[1],translateSphere[2]);
-        glutSolidSphere(1,50,50);
-    glPopMatrix(); 
+    //Test the sphere's coordinates
+    //printf("%f - %f - %f\n",s.getP()[0],s.getP()[1], s.getP()[2] );
  
-    
-    update();
-    
+        
     glutSwapBuffers(); //Send the new image to the buffer
 } 
 
@@ -82,11 +76,9 @@ int main(int argc, char *argv[])
     glutInitDisplayMode(GLUT_RGB | GLUT_DOUBLE | GLUT_DEPTH); 
  
 
-    Physics p = Physics();
-    Sphereobject s = Sphereobject();
+    p = Physics();
+    s = Sphereobject();
     s.setP(translateSphere);
-
-    printf("%f\n", s.getP()[1]);
 
     glutCreateWindow("B-Curve"); 
  
