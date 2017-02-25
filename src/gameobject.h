@@ -16,6 +16,7 @@ public:
 	~Gameobject();
 
 	void draw();
+	void print();
 	void apply(Physics p);
 	bool intersect();	
 	Gameobject below();

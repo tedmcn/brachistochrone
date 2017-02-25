@@ -2,8 +2,8 @@
 
 //Constructor
 Gameobject::Gameobject(){
-	v=Vectorobject();
-	a=Vectorobject();
+//	v=Vectorobject();
+//	a=Vectorobject();
 
 	//Always start with acceleration being standard gravity
 	float acceleration[3] = {0,-9.8,0};
@@ -21,6 +21,22 @@ Gameobject::~Gameobject(){
 void Gameobject::draw(){
 }
 
+
+void Gameobject::print(){
+	float* temp_position= getP();
+	float* temp_velocity = getV().get();
+	float* temp_acceleration = getA().get();
+	printf("\n");
+	printf("position = %f - %f - %f\n", temp_position[0],temp_position[1],temp_position[2]);
+	printf("velocity = %f - %f - %f\n", temp_velocity[0],temp_velocity[1],temp_velocity[2]);
+	printf("acceleration = %f - %f - %f\n", temp_acceleration[0],temp_acceleration[1],temp_acceleration[2]);
+	
+	// printf("%p - %p - %p\n",&temp_position[0],&temp_velocity[0],&temp_acceleration[0]);
+	// printf("%p - %p - %p\n",&temp_position[1],&temp_velocity[1],&temp_acceleration[1]);
+	// printf("%p - %p - %p\n",&temp_position[2],&temp_velocity[2],&temp_acceleration[2]);
+
+	printf("\n");
+}
 
 //
 //POSITION
@@ -91,11 +107,7 @@ void Gameobject::apply(Physics p){
 	float* temp_velocity = getV().get();
 	float* temp_acceleration = getA().get();
 
-	printf("\n");
-	printf("position = %f - %f - %f\n", temp_position[0],temp_position[1],temp_position[2]);
-	printf("velocity = %f - %f - %f\n", temp_velocity[0],temp_velocity[1],temp_velocity[2]);
-	printf("acceleration = %f - %f - %f\n", temp_acceleration[0],temp_acceleration[1],temp_acceleration[2]);
-	printf("\n");
+	
 
 
 
@@ -127,6 +139,7 @@ void Gameobject::apply(Physics p){
 		temp_position[i]= temp_position[i]+ temp_values[i];
 	}
 
+
 	//Finally save the new position
 	setP(temp_position);
 
@@ -139,8 +152,9 @@ void Gameobject::apply(Physics p){
 	//Next calculate velocity
 	for(i=0;i<3;i++){
 		//Velocity equals acceleration times the difference in time
-		temp_values[i]=diff*getA().get()[i];
+		temp_values[i]=diff*temp_acceleration[i] + temp_velocity[i];
 	}
+	printf("Temp values = %f - %f - %f\n",temp_values[0],temp_values[1],temp_values[2] );
 
 	//Set the new Velocity
 	setV(temp_values);

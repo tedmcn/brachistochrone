@@ -31,7 +31,8 @@ public:
 
 protected:
     
-    float coordinates[3];
+
+    float *coordinates;
     
 private:
     

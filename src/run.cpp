@@ -31,7 +31,7 @@ static void resize(int width, int height)
 //This function is used on every frame, it is used to draw the 3d environment onto the screen
 static void display(void)
 { 
- 
+    s.print();
 
 
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT); //Clear the previous image
@@ -54,7 +54,7 @@ static void display(void)
     p.update();
     //Update the sphere object
     s.apply(p);
-        
+
     glutSwapBuffers(); //Send the new image to the buffer
 } 
 
@@ -83,6 +83,7 @@ int main(int argc, char *argv[])
 
     p = Physics();
     s = Sphereobject();
+
     s.setP(translateSphere);
 
     glutCreateWindow("B-Curve"); 

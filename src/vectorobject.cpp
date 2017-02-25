@@ -1,7 +1,9 @@
 #include "vectorobject.h"
-
+#include <stdlib.h>
 
 Vectorobject::Vectorobject(float* c){
+	coordinates = (float *)malloc(sizeof(float)*3);
+
 	coordinates[0]=c[0];
 	coordinates[1]=c[1];
 	coordinates[2]=c[2];
@@ -9,6 +11,9 @@ Vectorobject::Vectorobject(float* c){
 
 
 Vectorobject::Vectorobject(){
+	
+	coordinates = (float *)malloc(sizeof(float)*3);
+
 	coordinates[0]=0;
 	coordinates[1]=0;
 	coordinates[2]=0;
@@ -48,10 +53,10 @@ void Vectorobject::set(float* c){
 //up and straight to the side vectors, resulting in a x=y vector.
 Vectorobject Vectorobject::average(Vectorobject v){
     
-    float x = (v.coordinates[0]+coordinates[0])/2;
-    float y = (v.coordinates[1]+coordinates[1])/2;
-    float z = (v.coordinates[2]+coordinates[2])/2;
-    float coords[3]={x,y,z};
+    float x1 = (v.coordinates[0]+coordinates[0])/2;
+    float y1 = (v.coordinates[1]+coordinates[1])/2;
+    float z1 = (v.coordinates[2]+coordinates[2])/2;
+    float coords[3]={x1,y1,z1};
     Vectorobject new_v = Vectorobject(coords);
     return new_v;
 }
