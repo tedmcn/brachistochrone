@@ -1,10 +1,13 @@
-#ifndef gameobject_h
 #include "gameobject.h"
-#endif
 
 //Constructor
 Gameobject::Gameobject(){
+	v=Vectorobject();
+	a=Vectorobject();
 
+	//Always start with acceleration being standard gravity
+	float acceleration[3] = {0,0,-9.8};
+	a.set(acceleration);
 }
 
 //Deconstructor
@@ -12,21 +15,22 @@ Gameobject::~Gameobject(){
 
 }
 
-//Set the velocity of the object
-void Gameobject::setV(float velocity){
-	v = velocity;
+
+
+//Different for every child class
+void Gameobject::draw(){
 }
 
-//Read the velocity of the object
-float Gameobject::getV(){
-	return v;
-}
+
+//
+//POSITION
+//
 
 //Set the game objects main coordinates
-void Gameobject::setP(float* pos){
-	p[0]=pos[0];
-	p[1]=pos[1];
-	p[2]=pos[2];
+void Gameobject::setP(float* position){
+	p[0]=position[0];
+	p[1]=position[1];
+	p[2]=position[2];
 }
 
 //Read the game objects coordinates
@@ -34,31 +38,40 @@ float* Gameobject::getP(){
 	return p;
 }
 
+
+//
+//VELOCITY
+//
+
+
+//Set the velocity of the object
+void Gameobject::setV(float* velocity){
+	//Load the velocity into a vector object
+	Vectorobject velocity_vector = Vectorobject(velocity);
+	//Save it
+	v = velocity_vector;
+}
+
+//Read the velocity of the object
+Vectorobject Gameobject::getV(){
+	return v;
+}
+
+//
+//ACCELERATION
+//
+
+
 //Set the Direction of the object
-void Gameobject::setD(float x, float y, float z){
-	d[0]=x;
-	d[1]=y;
-	d[2]=z;
+void Gameobject::setA(float* acceleration){
+	//Load the acceleration into a vector object
+	Vectorobject acceleration_vector = Vectorobject(acceleration);
+	//Save it
+	a = acceleration_vector;
 }
 
 //Read the direction of the object
-float* Gameobject::getD(){
-	return d;
-}
-
-//Different for every child class
-void Gameobject::draw(){
-}
-
-//Set the Direction of the object
-void Gameobject::setA(float x, float y, float z){
-	a[0]=x;
-	a[1]=y;
-	a[2]=z;
-}
-
-//Read the direction of the object
-float* Gameobject::getA(){
+Vectorobject Gameobject::getA(){
 	return a;
 }
 

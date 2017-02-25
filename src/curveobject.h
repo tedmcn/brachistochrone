@@ -1,3 +1,6 @@
+#ifndef curveobject_h
+#define curveobject_h
+
 #include "gameobject.h"
 
 class Curveobject: public Gameobject{
@@ -8,3 +11,5 @@ public:
 	bool intersect();
 
 };
+
+#endif

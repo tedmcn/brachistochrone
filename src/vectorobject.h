@@ -10,19 +10,23 @@
 //More complex vectors can be represented with coordinates further from the origin
 //such as {1,2,0} (x=2y graph) which is different from {1,1,0} (which is x=y graph)
 
+#ifndef vectorobject_h
+#define vectorobject_h
 
 class Vectorobject {
 
 public:
 	
 	Vectorobject(float* c);
+	Vectorobject();
+
 	~Vectorobject();
 
 	Vectorobject average(Vectorobject v);
     float* toDegree();
 
-    float* getCoordinates();
-    void setCoordinates(float* c);
+    float* get();
+    void set(float* c);
     
 
 protected:
@@ -32,3 +36,5 @@ protected:
 private:
     
 };
+
+#endif

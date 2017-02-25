@@ -1,3 +1,8 @@
+#include "vectorobject.h"
+
+#ifndef gameobject_h
+#define gameobject_h
+
 class Gameobject{
 
 //Everything in here is public
@@ -13,30 +18,27 @@ public:
 	bool intersect();	
 	Gameobject below();
 
-
-	void setV(float velocity);
-	float getV();
-
-	void setP(float* pos);
+	//Position represented with a array of floats
+	void setP(float* positon);
 	float* getP();
 
-	void setD(float x1, float y1, float z1);
-	float* getD();
+	//Acceleration represented with a vector
+	void setV(float* velocity);
+	Vectorobject getV();
 
-	void setA(float x1, float y1, float z1);
-	float* getA();
+	//Acceleration represented with a vector
+	void setA(float* accelation);
+	Vectorobject getA();
 
 //Everything here can only be used within the class
 protected:
 
-	float v;	//Velocity
-
 	float p[3];	//Position represented with 3 coordinates
-	
-	float d[3];	//Direction, represented with a vector from the
-			//origin to the direction of this point
+
+	Vectorobject v;	//Velocity
 			
-	float a[3]; //Acceleration of the ball
+	Vectorobject a; //Acceleration of the ball
 	
 
 };
+#endif

@@ -2,8 +2,12 @@
 #include <stdlib.h> 
 #include <stdio.h>
 
-#include "physics.h"
+#ifndef gameobject_h
+#include "gameobject.h"
+#endif
+
 #include "vectorobject.h"
+#include "physics.h"
 #include "sphereobject.h"
 //#include "curveobject.h"
 
@@ -31,7 +35,10 @@ static void resize(int width, int height)
 static void display(void)
 { 
  
-
+    //Apply the time update
+    p.update();
+    //Update the sphere object
+    p.apply(s);
 
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT); //Clear the previous image
 

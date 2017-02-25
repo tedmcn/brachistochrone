@@ -1,26 +1,17 @@
-#ifndef vectorobject_h
 #include "vectorobject.h"
-#endif
 
-//Averages two different vectors
-//
-//The average of {0,1,0} and {1,0,0} (a vector going straigh up and straight 
-//on the x axis) should be {1,1,0} because it is going in between the straight
-//up and straight to the side vectors, resulting in a x=y vector.
-Vectorobject Vectorobject::average(Vectorobject v){
-    
-    float x = (v.coordinates[0]+coordinates[0])/2;
-    float y = (v.coordinates[1]+coordinates[1])/2;
-    float z = (v.coordinates[2]+coordinates[2])/2;
-    float coords[3]={x,y,z};
-    Vectorobject new_v = Vectorobject(coords);
-    return new_v;
-}
 
 Vectorobject::Vectorobject(float* c){
 	coordinates[0]=c[0];
 	coordinates[1]=c[1];
 	coordinates[2]=c[2];
+}
+
+
+Vectorobject::Vectorobject(){
+	coordinates[0]=0;
+	coordinates[1]=0;
+	coordinates[2]=0;
 }
 
 Vectorobject::~Vectorobject(){
@@ -40,12 +31,27 @@ float* Vectorobject::toDegree(){
 
 }
 
-float* Vectorobject::getCoordinates(){
+float* Vectorobject::get(){
     return coordinates;
 }
 
-void Vectorobject::setCoordinates(float* c){
+void Vectorobject::set(float* c){
     coordinates[0]=c[0];
     coordinates[1]=c[1];
     coordinates[2]=c[2];
+}
+
+//Averages two different vectors
+//
+//The average of {0,1,0} and {1,0,0} (a vector going straigh up and straight 
+//on the x axis) should be {1,1,0} because it is going in between the straight
+//up and straight to the side vectors, resulting in a x=y vector.
+Vectorobject Vectorobject::average(Vectorobject v){
+    
+    float x = (v.coordinates[0]+coordinates[0])/2;
+    float y = (v.coordinates[1]+coordinates[1])/2;
+    float z = (v.coordinates[2]+coordinates[2])/2;
+    float coords[3]={x,y,z};
+    Vectorobject new_v = Vectorobject(coords);
+    return new_v;
 }
