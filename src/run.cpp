@@ -6,11 +6,12 @@
 #include "vectorobject.h"
 #include "physics.h"
 #include "sphereobject.h"
+#include "planeobject.h"
 //#include "curveobject.h"
 
 
-GLfloat translateSphere[] = {0.0,0,-15};
 Sphereobject s;
+Planeobject plane;
 Physics p;
 
 
@@ -37,8 +38,11 @@ static void display(void)
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT); //Clear the previous image
 
     //Reset the viewport to the standard camera angel
+    
+
     glMatrixMode(GL_MODELVIEW);
     glLoadIdentity();
+    gluLookAt(15.0,15.0,15.0,0.0,0.0,0.0,0.0,1.0,0.0);
 
 
     glColor3d(1,0,0); 	//Draw in red
@@ -46,6 +50,11 @@ static void display(void)
 
     //Draw the sphere
     s.draw();
+
+    glColor3d(0,0,0);   //Draw black plane
+
+    //Draw the plane
+    plane.draw();
 
     //Test the sphere's coordinates
     // printf("%f - %f - %f\n",s.getP()[0],s.getP()[1], s.getP()[2] );
@@ -75,16 +84,22 @@ const GLfloat high_shininess[] = { 100.0f };
 int main(int argc, char *argv[])
 {
    
+    //Start opengl, Create the window
     glutInit(&argc, argv);
     glutInitWindowSize(640,480);
     glutInitWindowPosition(10,10);
     glutInitDisplayMode(GLUT_RGB | GLUT_DOUBLE | GLUT_DEPTH); 
  
+    
+    GLfloat sphere_coordinates[] = {0,10,0};
+    GLfloat plane_coordinates[] = {0,0,0};
 
     p = Physics();
+    plane = Planeobject();
     s = Sphereobject();
 
-    s.setP(translateSphere);
+    s.setP(sphere_coordinates);
+    plane.setP(plane_coordinates);
 
     glutCreateWindow("B-Curve"); 
  
