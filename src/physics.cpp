@@ -1,7 +1,3 @@
-#include <sys/time.h>
-#include <time.h>
-#include <stdio.h>
-
 #include "physics.h"
 
 //Constructor
@@ -15,10 +11,6 @@ Physics::Physics(){
 //Deconstructor
 Physics::~Physics(){
 	
-}
-
-void Physics::apply(Gameobject obj){
-
 }
 
 //This function updates the current time in microseconds
@@ -35,19 +27,23 @@ void Physics::update(){
 		//Add 1 million to the temp time
 		temp_time=temp_time+1000000;
 		//Calculate the difference between the previous and current time
-		diff= temp_time - t;
+		diff= (temp_time - t)/1000000;
 		//Reset the temp time
 		temp_time=temp_time-1000000;
 	}
 	//Otherwise simply calculate the difference
 	else{
-		diff=temp_time-t;
+		diff=(temp_time-t)/1000000;
 	}
 
 	//Save the new time
 	t=temp_time;
 
 	//Print the time and difference for testing
-	//printf("%ld - %ld \n", t, diff);
+	//printf("%Lf - %Lf \n", t, diff);
 
+}
+
+long double Physics::getDiff(){
+	return diff;
 }

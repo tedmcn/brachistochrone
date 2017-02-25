@@ -1,8 +1,9 @@
 #ifndef physics_h
 #define physics_h
 
-#include "gameobject.h"
-
+#include <sys/time.h>
+#include <time.h>
+#include <stdio.h>
 
 class Physics{
 
@@ -11,13 +12,13 @@ public:
 	Physics();
 	~Physics();
 
-	void apply(Gameobject obj);
 	void update();
+	long double getDiff();
 
 protected:
 
-	long int t;
-	long int diff;
+	long double t;
+	long double diff;
 	struct timeval now;
 
 private:

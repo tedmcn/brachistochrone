@@ -2,10 +2,7 @@
 #include <stdlib.h> 
 #include <stdio.h>
 
-#ifndef gameobject_h
 #include "gameobject.h"
-#endif
-
 #include "vectorobject.h"
 #include "physics.h"
 #include "sphereobject.h"
@@ -35,10 +32,7 @@ static void resize(int width, int height)
 static void display(void)
 { 
  
-    //Apply the time update
-    p.update();
-    //Update the sphere object
-    p.apply(s);
+
 
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT); //Clear the previous image
 
@@ -54,8 +48,12 @@ static void display(void)
     s.draw();
 
     //Test the sphere's coordinates
-    //printf("%f - %f - %f\n",s.getP()[0],s.getP()[1], s.getP()[2] );
+    // printf("%f - %f - %f\n",s.getP()[0],s.getP()[1], s.getP()[2] );
  
+    //Apply the time update
+    p.update();
+    //Update the sphere object
+    s.apply(p);
         
     glutSwapBuffers(); //Send the new image to the buffer
 } 

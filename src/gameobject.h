@@ -1,4 +1,5 @@
 #include "vectorobject.h"
+#include "physics.h"
 
 #ifndef gameobject_h
 #define gameobject_h
@@ -15,11 +16,13 @@ public:
 	~Gameobject();
 
 	void draw();
+	void apply(Physics p);
 	bool intersect();	
 	Gameobject below();
 
 	//Position represented with a array of floats
 	void setP(float* positon);
+	void setP(float x, float y, float z);
 	float* getP();
 
 	//Acceleration represented with a vector
