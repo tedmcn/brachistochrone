@@ -10,7 +10,7 @@
 //#include "curveobject.h"
 
 
-Sphereobject s;
+Sphereobject s= Sphereobject(1);
 Planeobject plane;
 Physics p;
 
@@ -96,7 +96,6 @@ int main(int argc, char *argv[])
 
     p = Physics();
     plane = Planeobject();
-    s = Sphereobject();
 
     s.setP(sphere_coordinates);
     plane.setP(plane_coordinates);

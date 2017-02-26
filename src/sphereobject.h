@@ -10,11 +10,14 @@ class Sphereobject : public Gameobject{
 
 public:
 	
-	Sphereobject();
+	Sphereobject(float r);
 	~Sphereobject();
 
 
 	void draw();
 	bool intersect();
+
+protected:
+	float radius;
 
 };
