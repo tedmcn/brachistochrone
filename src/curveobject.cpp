@@ -1,6 +1,7 @@
 #include "curveobject.h"
 
 void Curveobject::draw(){
+
 }
 
 

@@ -3,6 +3,14 @@
 //Constructor
 Planeobject::Planeobject(){
 
+	scale = (float *)malloc(sizeof(GLfloat)*3);
+
+	scale[0] = 10;
+	scale[1] = 1;
+	scale[2] = 10;
+
+	float acceleration[3] = {0,0,0};
+	a.set(acceleration);
 }
 
 //Deconstructor
@@ -11,8 +19,17 @@ Planeobject::~Planeobject(){
 }
 
 
+void Planeobject::setN(float* n){
+	Vectorobject normal_vector = Vectorobject(n);
+	//Save it
+	normal = normal_vector;
+}
+
+Vectorobject Planeobject::getN(){
+	return normal;
+}
+
 void Planeobject::draw(){
-	GLfloat scale[] = {10,0.1,10};
 
 	//Add a sphere 
     glPushMatrix();

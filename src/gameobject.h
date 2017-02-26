@@ -1,3 +1,4 @@
+#include "planeobject.h"
 #include "vectorobject.h"
 #include "physics.h"
 
@@ -34,8 +35,12 @@ public:
 	void setA(float* accelation);
 	Vectorobject getA();
 
+
+	float gravity;
+
 //Everything here can only be used within the class
 protected:
+
 
 	float p[3];	//Position represented with 3 coordinates
 

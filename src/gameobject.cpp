@@ -1,13 +1,8 @@
 #include "gameobject.h"
-
+#include "planeobject.h"
 //Constructor
 Gameobject::Gameobject(){
-//	v=Vectorobject();
-//	a=Vectorobject();
-
-	//Always start with acceleration being standard gravity
-	float acceleration[3] = {0,-9.8,0};
-	a.set(acceleration);
+	gravity=-9.8;
 }
 
 //Deconstructor
@@ -99,81 +94,6 @@ Vectorobject Gameobject::getA(){
 
 
 void Gameobject::apply(Physics p){
-	
-
-	//Print things for testing
-
-	float* temp_position= getP();
-	float* temp_velocity = getV().get();
-	float* temp_acceleration = getA().get();
-
-	
-
-
-
-
-	int i;
-	float temp_values[3];
-	long double diff = p.getDiff();
-
-	printf("%Lf\n",diff );
-
-	//
-	//POSITION
-	//
-
-	//First calculate displacment
-	for(i=0;i<3;i++){
-		//Distance equals velocity times the difference in time
-		temp_values[i]=diff*temp_velocity[i];
-		printf("%f - ",temp_values[i] );
-	}
-	printf("\n");
-
-
-	//Save the current position of the object
-	temp_position = getP();
-
-	//Next change the position based on the displacment
-	for(i=0;i<3;i++){
-		temp_position[i]= temp_position[i]+ temp_values[i];
-	}
-
-
-	//Finally save the new position
-	setP(temp_position);
-
-
-	//
-	//VELOCITY
-	//
-
-
-	//Next calculate velocity
-	for(i=0;i<3;i++){
-		//Velocity equals acceleration times the difference in time
-		temp_values[i]=diff*temp_acceleration[i] + temp_velocity[i];
-	}
-	printf("Temp values = %f - %f - %f\n",temp_values[0],temp_values[1],temp_values[2] );
-
-	//Set the new Velocity
-	setV(temp_values);
-
-
-	//
-	//ACCELERATION
-	//
-
-
-	//Finally Acceleration
-
-
-
-
-
-
-
-
 }
 
 

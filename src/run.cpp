@@ -32,8 +32,7 @@ static void resize(int width, int height)
 //This function is used on every frame, it is used to draw the 3d environment onto the screen
 static void display(void)
 { 
-    s.print();
-
+    
 
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT); //Clear the previous image
 
@@ -42,27 +41,33 @@ static void display(void)
 
     glMatrixMode(GL_MODELVIEW);
     glLoadIdentity();
+    //Set the camera
     gluLookAt(15.0,15.0,15.0,0.0,0.0,0.0,0.0,1.0,0.0);
 
 
     glColor3d(1,0,0); 	//Draw in red
 
-
     //Draw the sphere
     s.draw();
 
-    glColor3d(0,0,0);   //Draw black plane
+
+    glColor3d(0,0,0.2);   //Draw blue plane
 
     //Draw the plane
     plane.draw();
 
+
+
+
     //Test the sphere's coordinates
-    // printf("%f - %f - %f\n",s.getP()[0],s.getP()[1], s.getP()[2] );
  
     //Apply the time update
     p.update();
     //Update the sphere object
-    s.apply(p);
+    s.apply(p,plane);
+
+    s.print();
+
 
     glutSwapBuffers(); //Send the new image to the buffer
 } 
@@ -94,18 +99,24 @@ int main(int argc, char *argv[])
     GLfloat sphere_coordinates[] = {0,10,0};
     GLfloat plane_coordinates[] = {0,0,0};
 
+    float plane_normal[]={0,1,0};
+
+//    s.intersect(plane);
+
     p = Physics();
     plane = Planeobject();
 
     s.setP(sphere_coordinates);
     plane.setP(plane_coordinates);
 
+    plane.setN(plane_normal);
+
     glutCreateWindow("B-Curve"); 
  
     glutReshapeFunc(resize);
     glutDisplayFunc(display); 
  
-    glClearColor(1,1,1,1);
+    glClearColor(1,1,.85,1);
     glEnable(GL_CULL_FACE);
     glCullFace(GL_BACK); 
  

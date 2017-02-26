@@ -7,8 +7,12 @@ class Curveobject: public Gameobject{
 
 public:
 	
+
 	void draw();
 	bool intersect();
+
+protected:
+	float *vertices;
 
 };
 

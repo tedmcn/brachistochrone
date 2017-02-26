@@ -1,3 +1,5 @@
+#ifndef planeobject_h
+#define planeobject_h
 
 #include <GL/glut.h>
 #include <stdlib.h> 
@@ -17,4 +19,12 @@ public:
 	void draw();
 	bool intersect();
 
+	void setN(float* normal);
+	Vectorobject getN();
+
+protected:
+	GLfloat *scale;
+	Vectorobject normal;
 };
+
+#endif
