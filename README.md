@@ -71,6 +71,7 @@ Our physics engine is a simple version of one that might be used in a simulation
 				};
 
 This is our parent class for all objects and provides as a good example for understanding OpenGL and physics engines. Everything we do in OpenGL is to model the real world, because that's the actual goal. Therefor like in the real world and real physics, every object has some position is space:
+									
 					float p[3];	//position represented with 3 coordinates
 
 Every object has a velocity in all 3 directions (although it may be 0):
@@ -80,6 +81,23 @@ Every object has a velocity in all 3 directions (although it may be 0):
 And every object is also accelerating in all 3 directions (again, might be 0):
 
 					Vectorobject a; //Acceleration
+					
+In a more complex engine there will probably even be fields to store the mass of the object, or the resistance of the material the object is made of. Never-the-less, with position, velocity, and acceleration we can accurately model simple projectile motion. With equations like 
+
+					v.final = v.initial + acceleration*delta.time
+					
+So with the limited information the objects have they can just the basic kinematic equations necissary to model real physics. But how does it show the simulation on the screen? Thats where OpenGL comes in.
+
+As previously alluded to, OpenGL is a graphics library that makes it rather simple to create a new window and draw objects in, and is very efficient in doing so. The basic premise of how OpenGL works is again, modeled after real life. We have a camera (sometimes refered to as eye) "object", light objects, and all the objects you want to draw. All these things have positions on an x,y,z plane and the camera and lights also store they point they are facing. When the code is run, it simulates light (in the form of rays) bouncing away from the camera lens, each ray corosponding to a pixel in the window. When each ray hits something (or doesn't) it knows what it hits (or doesn't) and therefor knows what color to assign to the pixel (still does).
+
+This process is actually being done every frame, or about every 250ms. The magic comes from this little command:
+
+				    glutIdleFunc(display);
+
+Which says, whenever the program is idle and is ready to exit, run the function display. Display is where we are adding our objects to draw to the buffer, so every single frame it does all the computation completely over again. You can take advantage of this by using the structures or classes suggested above. If we simplify the drawing function down to sphere.draw(), for say a sphere, we could modify the position of the sphere in another function, and the next time sphere is drawn, it would move.
+
+
+
 ### Implementation
 
 We were able to create a physics engine which accurately models the physics of a bouncing ball, both on a flat plane and an angled plane. This also consists of an accurate gravity simulation where each item affected by gravity will slowly approach free-fall under gravity (as opposed to just having the y-velocity of each time set to -9.8 manually). Furthermore, the engine also needed to have accurate collision detection between a plane (represented as a scaled cube for our purposes) and a sphere. Lastly, we were able to create this engine strictly with formulas related to projectile motion and similar fields of physics (formulas such as the dot product and cross product of vectors, or calculating position, velocity, and acceleration given a difference in time).
