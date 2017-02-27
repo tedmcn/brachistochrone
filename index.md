@@ -90,7 +90,7 @@ As previously alluded to, OpenGL is a graphics library that makes it rather simp
 
 This process is actually being done every frame, or about every 250ms. The magic comes from this little command:
 
-	    glutIdleFunc(display);
+	   glutIdleFunc(display);
 
 Which says, whenever the program is idle and is ready to exit, run the function display. Display is where we are adding our objects to draw to the buffer, so every single frame it does all the computation completely over again. You can take advantage of this by using the structures or classes suggested above. If we simplify the drawing function down to sphere.draw(), for say a sphere, we could modify the position of the sphere in another function, and the next time sphere is drawn, it would move.
 
