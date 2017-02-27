@@ -38,7 +38,7 @@ Given our problem space, there is really only one major decision for us to make 
 
 We compromised by implementing a cross between bounding boxes and bounding spheres by implementing bounding boxes for the cube-like objects and bounding spheres for sphere-like object. We believe this was the correct choice as we could set up the simulation with just spheres and cubes, and it gave us a chance to write our own Cube/Sphere collision detection algorithm.
 
-``if(intersects==0){
+		if(intersects==0){
 				//Velocity equals acceleration times the difference in time
 				temp_values2[i]=diff*temp_acceleration[i] + temp_velocity[i];
 		}
@@ -64,7 +64,7 @@ We compromised by implementing a cross between bounding boxes and bounding spher
 				}
 			}
 		}
-	}``
+	}
 
 <a href="http://www.youtube.com/watch?feature=player_embedded&v=nYlgMGgmB3k
 " target="_blank"><img src="http://img.youtube.com/vi/nYlgMGgmB3k/0.jpg" 
