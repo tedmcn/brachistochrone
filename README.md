@@ -6,18 +6,30 @@
 
 ### Authors
 
-Ted McNulty - tedmcnulty.com
+[Ted McNulty](tedmcnulty.com)
+
 Cleophas Kalekem
+
 Chong Swee
+
 Jiaxuan (Amy) Wu
 
 Help from [OpenGL](https://www.opengl.org) and [GLUT](https://www.opengl.org/resources/libraries/glut/).
 
 ### Getting Started
 
+To install the dependecies you will need, run
+                     
+                      ./install_libraries.sh
 
+Next you can run either the flat simluation or the slope simulation with:
 
+                      ./compile_flat.sh
+or
+                      
+                      ./compile_slope.sh
 
+Which will both compile and run the program for you.
 
 ### Usage
 
