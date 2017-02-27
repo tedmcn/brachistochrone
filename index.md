@@ -22,53 +22,53 @@ Regardless of the difficulties with the curve, we wanted to demonstrate our pers
 
 Our physics engine is a simple version of one that might be used in a simulation or a video game, with the help of rendering software like OpenGL which we used. The basic idea of OpenGL and a physics engine are straight forward; you can create objects defined in classes or structures. For example take a look at Gameobject.h:
 
-				class Gameobject{
+	class Gameobject{
 
-				//Everything in here is public
-				public:
+	//Everything in here is public
+	public:
 
-					//Constructor
-					Gameobject();
+	//Constructor
+	Gameobject();
 
-					//Deconstructor
-					~Gameobject();
-					
-					//Draw the object on the screen
-					void draw();
-					
-					//Print Diagnostic reports
-					void print();
-					
-					//Apply gravity and collision detection
-					void apply(Physics p);
-						
-					//Position represented with a array of floats
-					void setP(float* positon);
-					void setP(float x, float y, float z);
-					float* getP();
+	//Deconstructor
+	~Gameobject();
 
-					//Acceleration represented with a vector
-					void setV(float* velocity);
-					Vectorobject getV();
+	//Draw the object on the screen
+	void draw();
 
-					//Acceleration represented with a vector
-					void setA(float* accelation);
-					Vectorobject getA();
+	//Print Diagnostic reports
+	void print();
 
-					float gravity;
+	//Apply gravity and collision detection
+	void apply(Physics p);
 
-				//Everything here can only be used within the class
-				protected:
+	//Position represented with a array of floats
+	void setP(float* positon);
+	void setP(float x, float y, float z);
+	float* getP();
 
+	//Acceleration represented with a vector
+	void setV(float* velocity);
+	Vectorobject getV();
 
-					float p[3];	//Position represented with 3 coordinates
+	//Acceleration represented with a vector
+	void setA(float* accelation);
+	Vectorobject getA();
 
-					Vectorobject v;	//Velocity
+	float gravity;
 
-					Vectorobject a; //Acceleration
+	//Everything here can only be used within the class
+	protected:
 
 
-				};
+	float p[3];	//Position represented with 3 coordinates
+
+	Vectorobject v;	//Velocity
+
+	Vectorobject a; //Acceleration
+
+
+	};
 
 This is our parent class for all objects and provides as a good example for understanding OpenGL and physics engines. Everything we do in OpenGL is to model the real world, because that's the actual goal. Therefore like in the real world and real physics, every object has some position is space:
 									
