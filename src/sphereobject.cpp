@@ -127,7 +127,7 @@ void Sphereobject::apply(Physics p, Planeobject plane){
 			//Return the remaining 3/5th of energy in the x and z direction
 			//relative to the normal
 
-			printf("NORMAL = %f | %f | %f\n",plane.getN().get()[0],plane.getN().get()[1],plane.getN().get()[2] );
+			//printf("NORMAL = %f | %f | %f\n",plane.getN().get()[0],plane.getN().get()[1],plane.getN().get()[2] );
 
 			int j;
 			
@@ -152,7 +152,7 @@ void Sphereobject::apply(Physics p, Planeobject plane){
 				}
 			}
 
-			printf("%f | %f\n",normal_sum, velocity_sum );
+		//	printf("%f | %f\n",normal_sum, velocity_sum );
 
 
 

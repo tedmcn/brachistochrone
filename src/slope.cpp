@@ -70,7 +70,7 @@ static void display(void)
     //Update the sphere object
     s.apply(p,plane);
 
-    s.print();
+    //s.print();
 
 
     glutSwapBuffers(); //Send the new image to the buffer
