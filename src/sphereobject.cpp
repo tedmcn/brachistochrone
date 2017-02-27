@@ -23,17 +23,18 @@ void Sphereobject::draw(){
 
 
 bool Sphereobject::intersect(Planeobject plane){
-	float distance;
+	//Make sure distance starts at 0
+	float distance=0;
 	int i;
 	float* temp_position= getP();
 	float* normal = plane.getN().get();
 	for(i=0;i<3;i++){
-		distance = distance +(temp_position[i]*normal[i]);
+		distance = distance +(temp_position[i]*plane.getN().get()[i]);
+		//	printf("%f\n",(distance));
+
 	}
 
-	//	printf("%i\n",fabs(distance)<1);
-
-	return fabs(distance)<1;
+	return fabs(distance)<1.3;
 }
 
 
@@ -103,9 +104,15 @@ void Sphereobject::apply(Physics p, Planeobject plane){
 	//VELOCITY
 	//***********************************************************************//
 
+	float normal_sum =0;
+	float velocity_sum=0;
 
 	//Next calculate velocity
 	for(i=0;i<3;i++){
+
+		
+		
+
 		//If no intersection nothing is special
 		if(intersects==0){
 				//Velocity equals acceleration times the difference in time
@@ -113,14 +120,51 @@ void Sphereobject::apply(Physics p, Planeobject plane){
 		}
 		//If there was intersection
 		else{
-			temp_values2[1]=-2*(temp_velocity[1])/5;
+			//Return 2/5th of the energy in the postive y direction
+			//since its a bouncy ball
+			//temp_values2[1]=-2*(temp_velocity[1])/5;
 			
-			//
+			//Return the remaining 3/5th of energy in the x and z direction
+			//relative to the normal
+
+			printf("NORMAL = %f | %f | %f\n",plane.getN().get()[0],plane.getN().get()[1],plane.getN().get()[2] );
+
+			int j;
+			
+			normal_sum= plane.getN().get()[0] + plane.getN().get()[1]+ plane.getN().get()[2];
+			velocity_sum= fabs(temp_velocity[0])+fabs(temp_velocity[1])+fabs(temp_velocity[2]);
+
+			for(j=0;j<3;j++){
+				float t = plane.getN().get()[i];
+			}
+
+
+
+			//Allocate for energy lost in collision
+			velocity_sum= velocity_sum*0.6;
+
+			//Divide the momentum by the normal vector sum
+			velocity_sum= velocity_sum/normal_sum;
+
+			for(j=0;j<3;j++){
+				if(plane.getN().get()[i]!=0){
+					temp_values2[i]=velocity_sum*plane.getN().get()[i];
+				}
+			}
+
+			printf("%f | %f\n",normal_sum, velocity_sum );
+
+
+
+
 
 		}
 	}
 	//Always account for gravity
 	temp_values2[1]=diff*gravity + temp_values2[1];
+	if(temp_values2[1]<-9.8){
+		temp_values2[1]=-9.8;
+	}
 
 	//Set the new Velocity
 	setV(temp_values2);

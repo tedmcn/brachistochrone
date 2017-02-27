@@ -1,13 +1,21 @@
 #include "planeobject.h"
 
 //Constructor
-Planeobject::Planeobject(){
+Planeobject::Planeobject(float* n, float* s){
+
+	int i;
+	float temp[3];
 
 	scale = (float *)malloc(sizeof(GLfloat)*3);
 
-	scale[0] = 10;
-	scale[1] = .1;
-	scale[2] = 20;
+
+	for(i=0;i<3;i++){
+		scale[i]=s[i];
+		temp[i]=n[i];
+	}
+
+	Vectorobject norm = Vectorobject(temp);
+	normal=norm;
 
 	float acceleration[3] = {0,0,0};
 	a.set(acceleration);

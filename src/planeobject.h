@@ -12,7 +12,7 @@ class Planeobject : public Gameobject{
 
 public:
 	
-	Planeobject();
+	Planeobject(float* n, float* s);
 	~Planeobject();
 
 
