@@ -1,3 +1,13 @@
+/*Ted McNulty
+ *2/27/17
+ *ENGR 2535
+ 
+ *Sphereobject class file
+ *
+ *Holds all information needed to draw a sphere onto
+ *the openGL buffer and detect collison
+*/
+
 #include "planeobject.h"
 #include "sphereobject.h"
 #include <math.h>
@@ -13,6 +23,7 @@ Sphereobject::~Sphereobject(){
 }
 
 
+//Draw the sphere onto the buffer
 void Sphereobject::draw(){
 	//Add a sphere 
     glPushMatrix();
@@ -21,17 +32,18 @@ void Sphereobject::draw(){
     glPopMatrix(); 
 }
 
-
+//Check for intersection between a plane
+//
+//plane : Planeobject you want to check intersection with
 bool Sphereobject::intersect(Planeobject plane){
 	//Make sure distance starts at 0
 	float distance=0;
 	int i;
 	float* temp_position= getP();
 	float* normal = plane.getN().get();
+	//Calculate the dot product of the normal and the sphere's position to get distance
 	for(i=0;i<3;i++){
 		distance = distance +(temp_position[i]*plane.getN().get()[i]);
-		//	printf("%f\n",(distance));
-
 	}
 
 	return fabs(distance)<1.3;
@@ -39,9 +51,10 @@ bool Sphereobject::intersect(Planeobject plane){
 
 
 //Moves a sphere with collision detection for a plane
+//Applies new position, velocity, and acceleration, applies gravity.
 //
-//p - physics object
-//plane - plane to detect collision with
+//p : physics object
+//plane : plane to detect collision with
 void Sphereobject::apply(Physics p, Planeobject plane){
 
 	//Save values in case of detection and need rollback
@@ -81,7 +94,7 @@ void Sphereobject::apply(Physics p, Planeobject plane){
 		temp_values1[i]= temp_position[i]+ temp_values1[i];
 	}
 
-
+	//Does the sphere now intersect?
 	bool intersects= intersect(plane);
 
 	//If it doesn't intersect , Finally save the new position
@@ -120,25 +133,14 @@ void Sphereobject::apply(Physics p, Planeobject plane){
 		}
 		//If there was intersection
 		else{
-			//Return 2/5th of the energy in the postive y direction
-			//since its a bouncy ball
-			//temp_values2[1]=-2*(temp_velocity[1])/5;
-			
-			//Return the remaining 3/5th of energy in the x and z direction
-			//relative to the normal
 
-			//printf("NORMAL = %f | %f | %f\n",plane.getN().get()[0],plane.getN().get()[1],plane.getN().get()[2] );
-
+			//use j for counting
 			int j;
 			
+			//Calculate the sum of the normal vector
 			normal_sum= plane.getN().get()[0] + plane.getN().get()[1]+ plane.getN().get()[2];
+			//Calculate the sum of velocity in all directions
 			velocity_sum= fabs(temp_velocity[0])+fabs(temp_velocity[1])+fabs(temp_velocity[2]);
-
-			for(j=0;j<3;j++){
-				float t = plane.getN().get()[i];
-			}
-
-
 
 			//Allocate for energy lost in collision
 			velocity_sum= velocity_sum*0.6;
@@ -146,17 +148,12 @@ void Sphereobject::apply(Physics p, Planeobject plane){
 			//Divide the momentum by the normal vector sum
 			velocity_sum= velocity_sum/normal_sum;
 
+			//Reallocate the momentum relative to the normal of the surface it's hitting
 			for(j=0;j<3;j++){
 				if(plane.getN().get()[i]!=0){
 					temp_values2[i]=velocity_sum*plane.getN().get()[i];
 				}
 			}
-
-		//	printf("%f | %f\n",normal_sum, velocity_sum );
-
-
-
-
 
 		}
 	}
@@ -174,15 +171,15 @@ void Sphereobject::apply(Physics p, Planeobject plane){
 	//ACCELERATION
 	//***********************************************************************//
 
-	//Reduce acceleration a bit to simulate drag
+	//Reduce acceleration a bit to simulate drag / Air resistance
 	for(i=0;i<3;i++){
-		temp_values3[i]=(saved_acceleration[i]*.9)+temp_values3[i];
+		temp_values3[i]=(saved_acceleration[i]*.9);
 	}
 
 	//Set the new Acceleration
 	setA(temp_values3);
 
-
+	//Set the new diff
 	previous_diff=diff;
 
 }

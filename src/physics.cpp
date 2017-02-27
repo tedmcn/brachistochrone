@@ -1,3 +1,13 @@
+/*Ted McNulty
+ *2/27/17
+ *ENGR 2535
+
+ *Physics class
+ *
+ *Essentially only handles calculating the difference between when the last
+ *frame was drawn and &now
+*/
+
 #include "physics.h"
 
 //Constructor
@@ -14,8 +24,7 @@ Physics::~Physics(){
 }
 
 //This function updates the current time in microseconds
-// 1million microseconds to a second
-//
+//1 million microseconds to a second
 void Physics::update(){
 
 	//Save current time
@@ -38,10 +47,6 @@ void Physics::update(){
 
 	//Save the new time
 	t=temp_time;
-
-	//Print the time and difference for testing
-	//printf("%Lf - %Lf \n", t, diff);
-
 }
 
 long double Physics::getDiff(){

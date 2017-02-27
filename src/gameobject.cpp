@@ -1,7 +1,18 @@
+/*Ted McNulty
+ *2/27/17
+ *ENGR 2535
+
+ *Parent object for all objects that are added to the scene
+ *
+ *Mainly contains simple helper functions
+*/
+
 #include "gameobject.h"
 #include "planeobject.h"
+
 //Constructor
 Gameobject::Gameobject(){
+	//Gravity is constant for everything
 	gravity=-9.8;
 }
 
@@ -10,13 +21,18 @@ Gameobject::~Gameobject(){
 
 }
 
-
-
 //Different for every child class
+//Put since this is the parent object there is nothing to draw
 void Gameobject::draw(){
 }
 
 
+//Prints the current stats of the object
+//Position
+//Velocity
+//Acceleration
+//
+//Used for diagnostics
 void Gameobject::print(){
 	float* temp_position= getP();
 	float* temp_velocity = getV().get();
@@ -38,12 +54,19 @@ void Gameobject::print(){
 //***********************************************************************//
 
 //Set the game objects main coordinates
+//
+//position : pointer to float array representing position
 void Gameobject::setP(float* position){
 	p[0]=position[0];
 	p[1]=position[1];
 	p[2]=position[2];
 }
 
+//Set the game objects main coordinates
+//
+//x : x coordinate
+//y : y coordinate
+//z : z coordinate
 void Gameobject::setP(float x, float y, float z){
 	p[0]=x;
 	p[1]=y;
@@ -51,6 +74,8 @@ void Gameobject::setP(float x, float y, float z){
 }
 
 //Read the game objects coordinates
+//
+//Returns position
 float* Gameobject::getP(){
 	return p;
 }
@@ -62,6 +87,8 @@ float* Gameobject::getP(){
 
 
 //Set the velocity of the object
+//
+//velocity : pointer to float array representing Velocity vector
 void Gameobject::setV(float* velocity){
 	//Load the velocity into a vector object
 	Vectorobject velocity_vector = Vectorobject(velocity);
@@ -70,6 +97,8 @@ void Gameobject::setV(float* velocity){
 }
 
 //Read the velocity of the object
+//
+//Returns velocity
 Vectorobject Gameobject::getV(){
 	return v;
 }
@@ -80,6 +109,8 @@ Vectorobject Gameobject::getV(){
 
 
 //Set the Direction of the object
+//
+//acceleration : pointer to a float array representing acceleration
 void Gameobject::setA(float* acceleration){
 	//Load the acceleration into a vector object
 	Vectorobject acceleration_vector = Vectorobject(acceleration);
@@ -88,22 +119,13 @@ void Gameobject::setA(float* acceleration){
 }
 
 //Read the direction of the object
+//
+//Returns acceleration
 Vectorobject Gameobject::getA(){
 	return a;
 }
 
-
+//Apply gravity and collision detection
+//This will be different for every object
 void Gameobject::apply(Physics p){
 }
-
-
-
-// //Return true if the two objects have points where they overlap
-// bool Gameobject::intersect(Gameobject obj){
-// 	return false;
-// }
-
-// //Returns the object that is directly below this object (any distance)
-// Gameobject Gameobject::below(){
-// 	return null;
-// }

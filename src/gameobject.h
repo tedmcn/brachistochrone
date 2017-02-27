@@ -1,3 +1,11 @@
+/*Ted McNulty
+ *2/27/17
+ *ENGR 2535
+
+ *Header for gameobject parent class
+ *
+*/
+
 #include "planeobject.h"
 #include "vectorobject.h"
 #include "physics.h"
@@ -16,11 +24,17 @@ public:
 	//Deconstructor
 	~Gameobject();
 
+	//Draw the object onto the OpenGL buffer
 	void draw();
+
+	//Print the diagnostics of the object
 	void print();
+
+	//Apply physics to the object
 	void apply(Physics p);
+
+	//Test intersection
 	bool intersect();	
-	Gameobject below();
 
 	//Position represented with a array of floats
 	void setP(float* positon);
@@ -35,7 +49,6 @@ public:
 	void setA(float* accelation);
 	Vectorobject getA();
 
-
 	float gravity;
 
 //Everything here can only be used within the class
@@ -48,6 +61,5 @@ protected:
 			
 	Vectorobject a; //Acceleration of the ball
 	
-
 };
 #endif
