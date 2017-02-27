@@ -1,5 +1,6 @@
-Team Name: DocileDolphins
+## Team Name: DocileDolphins
 
+---
 
 Members: Cleophas Kalekem, Ted McNulty, Chong Swee, Jiaxuan (Amy) Wu
 
