@@ -70,7 +70,7 @@ Our physics engine is a simple version of one that might be used in a simulation
 
 				};
 
-This is our parent class for all objects and provides as a good example for understanding OpenGL and physics engines. Everything we do in OpenGL is to model the real world, because that's the actual goal. Therefor like in the real world and real physics, every object has some position is space:
+This is our parent class for all objects and provides us a good example for understanding OpenGL and physics engines. Everything we do in OpenGL is to model the real world, because that's the actual goal. Therefore like in the real world and real physics, every object has some position is space:
 									
 					float p[3];	//position represented with 3 coordinates
 
@@ -158,6 +158,10 @@ We compromised by implementing a cross between bounding boxes and bounding spher
 		}
 	}
 
+### Results
+Click on the figures below to watch the video demos 
+
+
 <a href="http://www.youtube.com/watch?feature=player_embedded&v=nYlgMGgmB3k
 " target="_blank"><img src="http://img.youtube.com/vi/nYlgMGgmB3k/0.jpg" 
 alt="IMAGE ALT TEXT HERE" width="240" height="180" border="10" /></a>               <a href="http://www.youtube.com/watch?feature=player_embedded&v=-zgPDSpFw68
@@ -166,12 +170,4 @@ alt="IMAGE ALT TEXT HERE" width="240" height="180" border="10" /></a>
 
 
 
-When we were only one weekend away from turning in this report, we had multiple options on how to complete this project, since we were not entirely sure yet if we could showcase a custom physics engine using the B curve. Our options included to:
-Go ahead with original plan with demonstrating B curve by figuring out how to detect collision using colliders, vectors, vertices, or faces.
-Create a plane and bounce a ball on the plane, with gravity implemented, which can demonstrate our custom physics engine.
-Have a ball bouncing around hitting the borders of the GUI.
-Have ball bounce on some vertices of the B curve, instead of rolling down the curve.
-Have a ball bounce around a cube.
 
-With option one, which was our stated minimal viable product, we took our professor’s advice that it may be beyond our reach at this point. When asked about our roadblock, on how to detect collision, it might be easier to use triangles or circles to detect when the ball and B curve would intersect. Our best decision was to work on options 2, 4 and 5. 
-Making a physics engine was an interesting, but challenging project for our group. I think we expected it to be much easier than what it turned out. 
