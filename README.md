@@ -1,14 +1,14 @@
-## Team Name: DocileDolphins
+# Team Name: DocileDolphins
 
 ---
 
-Members: Cleophas Kalekem, Ted McNulty, Chong Swee, Jiaxuan (Amy) Wu
+Cleophas Kalekem, Ted McNulty, Chong Swee, Jiaxuan (Amy) Wu
 
 Software Systems
 
 2/27/2017
 
-Project 1 Final Report
+## Project 1 Final Report
 
 ### Big Idea/Abstract
 
