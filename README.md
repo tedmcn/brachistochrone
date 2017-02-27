@@ -28,6 +28,11 @@ Our team is comprised of students that had little to no practice with graphics e
 7. We were able to generate C++ code that allowed us to have a ball affected by gravity.
 8. We were able to generate C++ code that allowed us to have a ball bouncing inside a cube.
 
+<a href="http://www.youtube.com/watch?feature=player_embedded&v=nYlgMGgmB3k
+" target="_blank"><img src="http://img.youtube.com/vi/nYlgMGgmB3k/0.jpg" 
+alt="IMAGE ALT TEXT HERE" width="240" height="180" border="10" /></a>
+
+
 When we were only one weekend away from turning in this report, we had multiple options on how to complete this project, since we were not entirely sure yet if we could showcase a custom physics engine using the B curve. Our options included to:
 Go ahead with original plan with demonstrating B curve by figuring out how to detect collision using colliders, vectors, vertices, or faces.
 Create a plane and bounce a ball on the plane, with gravity implemented, which can demonstrate our custom physics engine.
