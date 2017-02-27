@@ -84,9 +84,9 @@ Have a ball bounce around a cube.
 With option one, which was our stated minimal viable product, we took our professor’s advice that it may be beyond our reach at this point. When asked about our roadblock, on how to detect collision, it might be easier to use triangles or circles to detect when the ball and B curve would intersect. Our best decision was to work on options 2, 4 and 5. 
 Making a physics engine was an interesting, but challenging project for our group. I think we expected it to be much easier than what it turned out. 
 
-**Contributers**
+### Contributers
 
-Ted McNulty,Cleophas Kalekem,  Jiaxuan (Amy) Wu, Chong Swee
+*Ted McNulty, Cleophas Kalekem,  Jiaxuan (Amy) Wu, Chong Swee*
 
 
 
