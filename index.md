@@ -24,67 +24,65 @@ Our physics engine is a simple version of one that might be used in a simulation
 
 	class Gameobject{
 
-	//Everything in here is public
-	public:
+		//Everything in here is public
+		public:
 
-	//Constructor
-	Gameobject();
+		//Constructor
+		Gameobject();
 
-	//Deconstructor
-	~Gameobject();
+		//Deconstructor
+		~Gameobject();
 
-	//Draw the object on the screen
-	void draw();
+		//Draw the object on the screen
+		void draw();
 
-	//Print Diagnostic reports
-	void print();
+		//Print Diagnostic reports
+		void print();
 
-	//Apply gravity and collision detection
-	void apply(Physics p);
+		//Apply gravity and collision detection
+		void apply(Physics p);
 
-	//Position represented with a array of floats
-	void setP(float* positon);
-	void setP(float x, float y, float z);
-	float* getP();
+		//Position represented with a array of floats
+		void setP(float* positon);
+		void setP(float x, float y, float z);
+		float* getP();
 
-	//Acceleration represented with a vector
-	void setV(float* velocity);
-	Vectorobject getV();
+		//Acceleration represented with a vector
+		void setV(float* velocity);
+		Vectorobject getV();
 
-	//Acceleration represented with a vector
-	void setA(float* accelation);
-	Vectorobject getA();
+		//Acceleration represented with a vector
+		void setA(float* accelation);
+		Vectorobject getA();
 
-	float gravity;
+		float gravity;
 
-	//Everything here can only be used within the class
-	protected:
-
-
-	float p[3];	//Position represented with 3 coordinates
-
-	Vectorobject v;	//Velocity
-
-	Vectorobject a; //Acceleration
+		//Everything here can only be used within the class
+		protected:
 
 
+		float p[3];	//Position represented with 3 coordinates
+
+		Vectorobject v;	//Velocity
+
+		Vectorobject a; //Acceleration
 	};
 
 This is our parent class for all objects and provides as a good example for understanding OpenGL and physics engines. Everything we do in OpenGL is to model the real world, because that's the actual goal. Therefore like in the real world and real physics, every object has some position is space:
 									
-					float p[3];	//position represented with 3 coordinates
+	float p[3];	//position represented with 3 coordinates
 
 Every object has a velocity in all 3 directions (although it may be 0):
 
-					Vectorobject v; //Velocity
+	Vectorobject v; //Velocity
 
 And every object is also accelerating in all 3 directions (again, might be 0):
 
-					Vectorobject a; //Acceleration
+	Vectorobject a; //Acceleration
 					
 In a more complex engine there will probably even be fields to store the mass of the object, or the resistance of the material the object is made of. Never-the-less, with position, velocity, and acceleration we can accurately model simple projectile motion. With equations like 
 
-					v.final = v.initial + acceleration*delta.time
+	v.final = v.initial + acceleration*delta.time
 					
 So with the limited information the objects have they can just the basic kinematic equations necissary to model real physics. But how does it show the simulation on the screen? Thats where OpenGL comes in.
 
@@ -92,7 +90,7 @@ As previously alluded to, OpenGL is a graphics library that makes it rather simp
 
 This process is actually being done every frame, or about every 250ms. The magic comes from this little command:
 
-				    glutIdleFunc(display);
+	    glutIdleFunc(display);
 
 Which says, whenever the program is idle and is ready to exit, run the function display. Display is where we are adding our objects to draw to the buffer, so every single frame it does all the computation completely over again. You can take advantage of this by using the structures or classes suggested above. If we simplify the drawing function down to sphere.draw(), for say a sphere, we could modify the position of the sphere in another function, and the next time sphere is drawn, it would move.
 
@@ -121,44 +119,44 @@ Given our problem space, there is really only one major decision for us to make 
 We compromised by implementing a cross between bounding boxes and bounding spheres by implementing bounding boxes for the cube-like objects and bounding spheres for sphere-like object. We believe this was the correct choice as we could set up the simulation with just spheres and cubes, and it gave us a chance to write our own Cube/Sphere collision detection algorithm.
 
 		
-		//From Sphereobject::apply(Physics p);
-		//
-		//Recalculates position, velocity, and acceleration for a given sphereobject and time since last update
-		//This is only the section that recalculates velocity
-		//
-		//If there is no intersection
-		if(intersects==0){
-				//Velocity equals acceleration times the difference in time
-				temp_values2[i]=diff*temp_acceleration[i] + temp_velocity[i];
-		}
-		//If there was intersection
-		else{
-			//make an int for looping
-			int j;
-			
-			//Calculate the sum of the normal vector of the plane you are hitting
-			normal_sum= plane.getN().get()[0] + plane.getN().get()[1]+ plane.getN().get()[2];
-			//Calculate the sum of the velocity vector (absolute value to ignore direction)
-			velocity_sum= fabs(temp_velocity[0])+fabs(temp_velocity[1])+fabs(temp_velocity[2]);
-			
-			//Allocate for energy lost in collision
-			velocity_sum= velocity_sum*0.6;
-			
-			//Divide the total momentum by the sum of the vector (how many ways do we need to divide the energy up)
-			velocity_sum= velocity_sum/normal_sum;
-			
-			//For each axis
-			for(j=0;j<3;j++){
-				
-				//Given the plane's normal at i is NOT 0
-				if(plane.getN().get()[i]!=0){
-					
-					//Add velocity at i based on the momentum times the normal of the plane at i
-					temp_values2[i]=velocity_sum*plane.getN().get()[i];
-				}
+	//From Sphereobject::apply(Physics p);
+	//
+	//Recalculates position, velocity, and acceleration for a given sphereobject and time since last update
+	//This is only the section that recalculates velocity
+	//
+	//If there is no intersection
+	if(intersects==0){
+			//Velocity equals acceleration times the difference in time
+			temp_values2[i]=diff*temp_acceleration[i] + temp_velocity[i];
+	}
+	//If there was intersection
+	else{
+		//make an int for looping
+		int j;
+
+		//Calculate the sum of the normal vector of the plane you are hitting
+		normal_sum= plane.getN().get()[0] + plane.getN().get()[1]+ plane.getN().get()[2];
+		//Calculate the sum of the velocity vector (absolute value to ignore direction)
+		velocity_sum= fabs(temp_velocity[0])+fabs(temp_velocity[1])+fabs(temp_velocity[2]);
+
+		//Allocate for energy lost in collision
+		velocity_sum= velocity_sum*0.6;
+
+		//Divide the total momentum by the sum of the vector (how many ways do we need to divide the energy up)
+		velocity_sum= velocity_sum/normal_sum;
+
+		//For each axis
+		for(j=0;j<3;j++){
+
+			//Given the plane's normal at i is NOT 0
+			if(plane.getN().get()[i]!=0){
+
+				//Add velocity at i based on the momentum times the normal of the plane at i
+				temp_values2[i]=velocity_sum*plane.getN().get()[i];
 			}
 		}
 	}
+
 
 ### Results
 Below you can see two recordings of our physics engine at work. The first is a ball that falls onto a flat plane and bounces until it comes to a resting position, the second is a ball bouncing down a 45 degree slope to illustrate the engine's ability to handel any angle of slope or of the ball's velocity.
