@@ -12,7 +12,11 @@ Software Systems
 
 ### Big Idea/Abstract
 
-Our project is to showcase a custom physics engine coded in C/C++ using OpenGL. We selected our model to be the Brachistochrone curve, to illustrate how the custom physics engine works. The model is comprised of three ramps, one being the B curve. On top of each ramp is a sphere and the sphere that rolls down the B curve will always be the fastest. 
+Our goal for this project was to demonstrate the properties of the Brachistochrone Curve using our own physics engine. The Brachisochrone Curve is interesting because a ball at the top of the slope, will reach the bottom of the slope faster than any other type of curve or ramp. Also, the amount of time the ball takes to reach the bottom of the slope is constant, regardless of where the ball starts, whether it be at the very top, or a few inches from where the ball would naturally land.
+
+They are very interesting properties, however they only arise because the curve has such fine and specific detail. The more details an object has, the more triangles we need to use to represent it. This creates a problem because collsion detection for objects constructed with triangles is very computationally expensive. In a perfect simulation the triangles which construct the curve would be infinitely small, however this is not realistic. We were left with a tradeoff between decreasing the number of triangles and sacrificing the fine detail that is necissary for the curve. Later research suggested that even the complex polygon collision detection algorithm we were considering using (Seperating Axis Theorem) isn't reliable when detecting concave structures, such as curves.
+
+Regardless of the difficulties with the curve, we wanted to demonstrate our personal physics engine, so we instead tried to focus of a ball realisticly bouncing off of a surface, regardless the angle the ball was thrown or the angle of the surface.
 
 ### Background
 
