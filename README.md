@@ -36,7 +36,7 @@ Given our problem space, there is really only one major decision for us to make 
 
   Finally we considered the __Separating Axis-Theorem__, which is a professional algorithm which is specifically designed for collision detection between complex polygons, instead of simple cubes or spheres. As you might suspect, because this algorithm can handle such complex shapes it sacrifices a lot of run time (as it needs to compare every face to every other face, instead of just every object to every other object). Not only would this algorithm slow our simulation down significantly, but it also can only handle convex polygons, not concave polygons (like a slope). With these facts, we decided Separating Axis-Theorem would not be helpful. 
 
-  We compromised by implementing a cross between bounding boxes and bounding spheres by implementing bounding boxes for the cube-like objects and bounding spheres for sphere-like object. We believe this was the correct choice as we could set up the simulation with just spheres and cubes, and it gave us a chance to write our own Cube/Sphere collision detection algorithm.
+We compromised by implementing a cross between bounding boxes and bounding spheres by implementing bounding boxes for the cube-like objects and bounding spheres for sphere-like object. We believe this was the correct choice as we could set up the simulation with just spheres and cubes, and it gave us a chance to write our own Cube/Sphere collision detection algorithm.
 
 
 
