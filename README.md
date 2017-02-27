@@ -20,8 +20,66 @@ Regardless of the difficulties with the curve, we wanted to demonstrate our pers
 
 ### Background
 
-Our team is comprised of students that had little to no practice with graphics engineering, but all noted an interest in this domain. We decided to create a custom physics engine so that in the broader space, we can understand about the code behind enabling physics in a graphics engine and learn about the components and math behind physics. We were inspired by a YouTuber, Vsauce, who uploaded a video with MythBuster’s Adam Savage, where they created a physical model of the B curve. We wanted to generate this idea virtually in a graphics engine, choosing OpenGL which allowed us to implement our custom physics engine to demonstrate our knowledge in C and C++. 
+Our physics engine is a simple version of one that might be used in a simulation or a video game, with the help of rendering software like OpenGL which we used. The basic idea of OpenGL and a physics engine are straight forward; you can create objects defined in classes or structures. For example take a look at Gameobject.h:
 
+				class Gameobject{
+
+				//Everything in here is public
+				public:
+
+					//Constructor
+					Gameobject();
+
+					//Deconstructor
+					~Gameobject();
+					
+					//Draw the object on the screen
+					void draw();
+					
+					//Print Diagnostic reports
+					void print();
+					
+					//Apply gravity and collision detection
+					void apply(Physics p);
+						
+					//Position represented with a array of floats
+					void setP(float* positon);
+					void setP(float x, float y, float z);
+					float* getP();
+
+					//Acceleration represented with a vector
+					void setV(float* velocity);
+					Vectorobject getV();
+
+					//Acceleration represented with a vector
+					void setA(float* accelation);
+					Vectorobject getA();
+
+					float gravity;
+
+				//Everything here can only be used within the class
+				protected:
+
+
+					float p[3];	//Position represented with 3 coordinates
+
+					Vectorobject v;	//Velocity
+
+					Vectorobject a; //Acceleration
+
+
+				};
+
+This is our parent class for all objects and provides as a good example for understanding OpenGL and physics engines. Everything we do in OpenGL is to model the real world, because that's the actual goal. Therefor like in the real world and real physics, every object has some position is space:
+					float p[3];	//position represented with 3 coordinates
+
+Every object has a velocity in all 3 directions (although it may be 0):
+
+					Vectorobject v; //Velocity
+
+And every object is also accelerating in all 3 directions (again, might be 0):
+
+					Vectorobject a; //Acceleration
 ### Implementation
 
 We were able to create a physics engine which accurately models the physics of a bouncing ball, both on a flat plane and an angled plane. This also consists of an accurate gravity simulation where each item affected by gravity will slowly approach free-fall under gravity (as opposed to just having the y-velocity of each time set to -9.8 manually). Furthermore, the engine also needed to have accurate collision detection between a plane (represented as a scaled cube for our purposes) and a sphere. Lastly, we were able to create this engine strictly with formulas related to projectile motion and similar fields of physics (formulas such as the dot product and cross product of vectors, or calculating position, velocity, and acceleration given a difference in time).
