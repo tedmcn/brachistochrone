@@ -17,10 +17,16 @@ Jiaxuan (Amy) Wu
 Help from [OpenGL](https://www.opengl.org) and [GLUT](https://www.opengl.org/resources/libraries/glut/).
 
 ### Getting Started
+You will need to have GLUT installed on your machine:
 
+                      freeglut3-dev
+                      freeglut3
+       
 To install the dependecies you will need, run
                      
                       ./install_libraries.sh
+
+### Usage
 
 Next you can run either the flat simluation or the slope simulation with:
 
@@ -30,7 +36,5 @@ or
                       ./compile_slope.sh
 
 Which will both compile and run the program for you.
-
-### Usage
 
 ### License
