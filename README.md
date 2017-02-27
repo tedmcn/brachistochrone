@@ -8,7 +8,7 @@
 
 [Ted McNulty](http://www.tedmcnulty.com)
 
-Cleophas Kalekem
+[Cleophas Kalekem] (https://kalekem.github.io/)
 
 Chong Swee
 
