@@ -44,15 +44,6 @@ We compromised by implementing a cross between bounding boxes and bounding spher
 		}
 		//If there was intersection
 		else{
-			//Return 2/5th of the energy in the postive y direction
-			//since its a bouncy ball
-			//temp_values2[1]=-2*(temp_velocity[1])/5;
-			
-			//Return the remaining 3/5th of energy in the x and z direction
-			//relative to the normal
-
-			printf("NORMAL = %f | %f | %f\n",plane.getN().get()[0],plane.getN().get()[1],plane.getN().get()[2] );
-
 			int j;
 			
 			normal_sum= plane.getN().get()[0] + plane.getN().get()[1]+ plane.getN().get()[2];
@@ -61,8 +52,10 @@ We compromised by implementing a cross between bounding boxes and bounding spher
 			for(j=0;j<3;j++){
 				float t = plane.getN().get()[i];
 			}
+			
 			//Allocate for energy lost in collision
 			velocity_sum= velocity_sum*0.6;
+			
 			//Divide the momentum by the normal vector sum
 			velocity_sum= velocity_sum/normal_sum;
 			for(j=0;j<3;j++){
@@ -70,7 +63,6 @@ We compromised by implementing a cross between bounding boxes and bounding spher
 					temp_values2[i]=velocity_sum*plane.getN().get()[i];
 				}
 			}
-			printf("%f | %f\n",normal_sum, velocity_sum );
 		}
 	}``
 
