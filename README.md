@@ -1,6 +1,6 @@
 ## OpenGL Physics Engine
 
-[Project Page](https://tedmcn.github.io/SoftSysDocileDolphins/)
+[Link to the Project Page](https://tedmcn.github.io/SoftSysDocileDolphins/)
 
 ### Description
 
