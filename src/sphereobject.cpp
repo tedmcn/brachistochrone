@@ -36,29 +36,37 @@ bool Sphereobject::intersect(Planeobject plane){
 	return fabs(distance)<1;
 }
 
+
+//Moves a sphere with collision detection for a plane
+//
+//p - physics object
+//plane - plane to detect collision with
 void Sphereobject::apply(Physics p, Planeobject plane){
 
-
-	//Print things for testing
+	//Save values in case of detection and need rollback
 	float* saved_position = getP();
 	float* saved_velocity = getV().get();
 	float* saved_acceleration = getA().get();
 
+	//Create temp values we will overwrite/modify
 	float* temp_position= getP();
 	float* temp_velocity = getV().get();
 	float* temp_acceleration = getA().get();
 
-
+	//Used for loops
 	int i;
+
+	//Create empty arrays we can write into 
 	float temp_values1[3]={0,0,0};
 	float temp_values2[3]={0,0,0};
 	float temp_values3[3]={0,0,0};
-	long double diff = p.getDiff();
-	previous_diff=diff;
 
-	//
+	//Calculate how long it has been since the last frame was drawn and save it
+	long double diff = p.getDiff();
+
+	//***********************************************************************//
 	//POSITION
-	//
+	//***********************************************************************//
 
 	//First calculate displacment
 	for(i=0;i<3;i++){
@@ -89,23 +97,26 @@ void Sphereobject::apply(Physics p, Planeobject plane){
 		}
 		setP(temp_values1);
 	}
-	
+		
 
-
-
-
-	//
+	//***********************************************************************//
 	//VELOCITY
-	//
+	//***********************************************************************//
 
 
 	//Next calculate velocity
 	for(i=0;i<3;i++){
+		//If no intersection nothing is special
 		if(intersects==0){
 				//Velocity equals acceleration times the difference in time
 				temp_values2[i]=diff*temp_acceleration[i] + temp_velocity[i];
-		}else{
-			temp_values2[1]=-1*(temp_velocity[1])/3;
+		}
+		//If there was intersection
+		else{
+			temp_values2[1]=-2*(temp_velocity[1])/5;
+			
+			//
+
 		}
 	}
 	//Always account for gravity
@@ -115,9 +126,9 @@ void Sphereobject::apply(Physics p, Planeobject plane){
 	setV(temp_values2);
 
 
-	//
+	//***********************************************************************//
 	//ACCELERATION
-	//
+	//***********************************************************************//
 
 	//Reduce acceleration a bit to simulate drag
 	for(i=0;i<3;i++){
@@ -128,5 +139,6 @@ void Sphereobject::apply(Physics p, Planeobject plane){
 	setA(temp_values3);
 
 
+	previous_diff=diff;
 
 }

@@ -99,7 +99,7 @@ int main(int argc, char *argv[])
     GLfloat sphere_coordinates[] = {0,10,0};
     GLfloat plane_coordinates[] = {0,0,0};
 
-    float plane_normal[]={0,1,0};
+    float plane_normal[]={1,1,0};
 
 //    s.intersect(plane);
 

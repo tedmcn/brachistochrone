@@ -6,8 +6,8 @@ Planeobject::Planeobject(){
 	scale = (float *)malloc(sizeof(GLfloat)*3);
 
 	scale[0] = 10;
-	scale[1] = 1;
-	scale[2] = 10;
+	scale[1] = .1;
+	scale[2] = 20;
 
 	float acceleration[3] = {0,0,0};
 	a.set(acceleration);
@@ -31,8 +31,9 @@ Vectorobject Planeobject::getN(){
 
 void Planeobject::draw(){
 
-	//Add a sphere 
+	//Add a spher0
     glPushMatrix();
+    	glRotatef(45,1,0,0);
     	glScalef(scale[0],scale[1],scale[2]);	//Scale it from a cube into a plane (size)
         glTranslatef(p[0],p[1],p[2]);			//Move it to where it needs to be
         glutSolidCube(1);						// Make the cube (size 1);
