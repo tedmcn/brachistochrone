@@ -12,9 +12,10 @@
 
 Sphereobject s= Sphereobject(1);
 
-float plane_normal[]={0,1,1};
-float plane_scale[]={10,.1,500};
-Planeobject plane=Planeobject(plane_normal, plane_scale);
+float plane_normal[]={0,1,0};
+float plane_scale[]={10,.1,10};
+float plane_rotate[]={0,0,0};
+Planeobject plane=Planeobject(plane_normal, plane_scale, plane_rotate);
 Physics p;
 
 
@@ -45,7 +46,7 @@ static void display(void)
     glMatrixMode(GL_MODELVIEW);
     glLoadIdentity();
     //Set the camera
-    gluLookAt(15,0,0,0.0,0.0,0.0,0.0,1.0,0.0);
+    gluLookAt(15,15,15,0.0,0.0,0.0,0.0,1.0,0.0);
 
 
     glColor3d(1,0,0); 	//Draw in red
@@ -99,7 +100,7 @@ int main(int argc, char *argv[])
     glutInitDisplayMode(GLUT_RGB | GLUT_DOUBLE | GLUT_DEPTH); 
  
     
-    GLfloat sphere_coordinates[] = {0,10,-5};
+    GLfloat sphere_coordinates[] = {0,10,0};
     GLfloat plane_coordinates[] = {0,0,0};
 
 

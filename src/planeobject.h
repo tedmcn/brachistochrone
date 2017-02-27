@@ -12,7 +12,7 @@ class Planeobject : public Gameobject{
 
 public:
 	
-	Planeobject(float* n, float* s);
+	Planeobject(float* n, float* s, float* r);
 	~Planeobject();
 
 
@@ -24,6 +24,7 @@ public:
 
 protected:
 	GLfloat *scale;
+	float *rotate;
 	Vectorobject normal;
 };
 
