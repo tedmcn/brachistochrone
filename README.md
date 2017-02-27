@@ -1,6 +1,3 @@
-# Team Name: DocileDolphins
-
-
 ### Big Idea/Abstract
 
 Our project is to showcase a custom physics engine coded in C/C++ using OpenGL. We selected our model to be the Brachistochrone curve, to illustrate how the custom physics engine works. The model is comprised of three ramps, one being the B curve. On top of each ramp is a sphere and the sphere that rolls down the B curve will always be the fastest. 
