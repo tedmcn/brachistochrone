@@ -38,28 +38,40 @@ Given our problem space, there is really only one major decision for us to make 
 
 We compromised by implementing a cross between bounding boxes and bounding spheres by implementing bounding boxes for the cube-like objects and bounding spheres for sphere-like object. We believe this was the correct choice as we could set up the simulation with just spheres and cubes, and it gave us a chance to write our own Cube/Sphere collision detection algorithm.
 
+		
+		//From Sphereobject::apply(Physics p);
+		//
+		//Recalculates position, velocity, and acceleration for a given sphereobject and time since last update
+		//This is only the section that recalculates velocity
+		//
+		//If there is no intersection
 		if(intersects==0){
 				//Velocity equals acceleration times the difference in time
 				temp_values2[i]=diff*temp_acceleration[i] + temp_velocity[i];
 		}
 		//If there was intersection
 		else{
+			//make an int for looping
 			int j;
 			
+			//Calculate the sum of the normal vector of the plane you are hitting
 			normal_sum= plane.getN().get()[0] + plane.getN().get()[1]+ plane.getN().get()[2];
+			//Calculate the sum of the velocity vector (absolute value to ignore direction)
 			velocity_sum= fabs(temp_velocity[0])+fabs(temp_velocity[1])+fabs(temp_velocity[2]);
-
-			for(j=0;j<3;j++){
-				float t = plane.getN().get()[i];
-			}
 			
 			//Allocate for energy lost in collision
 			velocity_sum= velocity_sum*0.6;
 			
-			//Divide the momentum by the normal vector sum
+			//Divide the total momentum by the sum of the vector (how many ways do we need to divide the energy up)
 			velocity_sum= velocity_sum/normal_sum;
+			
+			//For each axis
 			for(j=0;j<3;j++){
+				
+				//Given the plane's normal at i is NOT 0
 				if(plane.getN().get()[i]!=0){
+					
+					//Add velocity at i based on the momentum times the normal of the plane at i
 					temp_values2[i]=velocity_sum*plane.getN().get()[i];
 				}
 			}
