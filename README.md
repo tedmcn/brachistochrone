@@ -38,21 +38,6 @@ Given our problem space, there is really only one major decision for us to make 
 
 
 
-
-
-
-
-
-
-1. We accomplished a lot in terms of the broader space, but felt we could have dived a bit deeper into coding. 
-2. Accomplishments:
-3. We were able to play around with Blender and OpenGL tutorials.
-4. We were able to understand the math behind the Brachistochrone curve
-5. We were able to generate C code that allowed us to have a falling ball in OpenGL
-6. We were able to load the B curve model from Blender into OpenGL using .obj extension. 
-7. We were able to generate C++ code that allowed us to have a ball affected by gravity.
-8. We were able to generate C++ code that allowed us to have a ball bouncing inside a cube.
-
 <a href="http://www.youtube.com/watch?feature=player_embedded&v=nYlgMGgmB3k
 " target="_blank"><img src="http://img.youtube.com/vi/nYlgMGgmB3k/0.jpg" 
 alt="IMAGE ALT TEXT HERE" width="240" height="180" border="10" /></a>               <a href="http://www.youtube.com/watch?feature=player_embedded&v=-zgPDSpFw68
