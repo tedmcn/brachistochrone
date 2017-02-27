@@ -161,8 +161,7 @@ We compromised by implementing a cross between bounding boxes and bounding spher
 	}
 
 ### Results
-Click on the figures below to watch the video demos 
-
+Below you can see two recordings of our physics engine at work. The first is a ball that falls onto a flat plane and bounces until it comes to a resting position, the second is a ball bouncing down a 45 degree slope to illustrate the engine's ability to handel any angle of slope or of the ball's velocity.
 
 <a href="http://www.youtube.com/watch?feature=player_embedded&v=nYlgMGgmB3k
 " target="_blank"><img src="http://img.youtube.com/vi/nYlgMGgmB3k/0.jpg" 
