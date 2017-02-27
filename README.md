@@ -30,7 +30,7 @@ Our team is comprised of students that had little to no practice with graphics e
 
 <a href="http://www.youtube.com/watch?feature=player_embedded&v=nYlgMGgmB3k
 " target="_blank"><img src="http://img.youtube.com/vi/nYlgMGgmB3k/0.jpg" 
-alt="IMAGE ALT TEXT HERE" width="240" height="180" border="10" /></a><a href="http://www.youtube.com/watch?feature=player_embedded&v=-zgPDSpFw68
+alt="IMAGE ALT TEXT HERE" width="240" height="180" border="10" /></a>               <a href="http://www.youtube.com/watch?feature=player_embedded&v=-zgPDSpFw68
 " target="_blank"><img src="http://img.youtube.com/vi/-zgPDSpFw68/0.jpg" 
 alt="IMAGE ALT TEXT HERE" width="240" height="180" border="10" /></a>
 
