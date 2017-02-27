@@ -27,7 +27,6 @@ Given our problem space, there is really only one major decision for us to make 
 1. Bounding boxes
 2. Bounding spheres
 3. Separating Axis theorem
-
   Bounding boxes, takes every object and it frames a box around it, as small as possible, this box acts as a hitbox for the object, and can be effective for many shapes, but for something like a sphere, it loses its effectiveness. If an object approaches the sphere within the box from the direction of one of the corners of the box, the collision detection will report a collision sooner than it should.
 
   So bounding boxes are effective for cube-like shapes, but we are dealing mostly with a sphere so we also considered bounding spheres. This takes the same concept, but instead of surrounding the object with a box for a hitbox, we surround it with a sphere. This is actually easier to calculate than a bounding box collision since all we have to do is make sure the distance between two objects are less than their radii. Again, this algorithm falls short for non-sphere objects.
