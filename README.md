@@ -70,7 +70,7 @@ Our physics engine is a simple version of one that might be used in a simulation
 
 				};
 
-This is our parent class for all objects and provides us a good example for understanding OpenGL and physics engines. Everything we do in OpenGL is to model the real world, because that's the actual goal. Therefore like in the real world and real physics, every object has some position is space:
+This is our parent class for all objects and provides as a good example for understanding OpenGL and physics engines. Everything we do in OpenGL is to model the real world, because that's the actual goal. Therefore like in the real world and real physics, every object has some position is space:
 									
 					float p[3];	//position represented with 3 coordinates
 
@@ -96,7 +96,9 @@ This process is actually being done every frame, or about every 250ms. The magic
 
 Which says, whenever the program is idle and is ready to exit, run the function display. Display is where we are adding our objects to draw to the buffer, so every single frame it does all the computation completely over again. You can take advantage of this by using the structures or classes suggested above. If we simplify the drawing function down to sphere.draw(), for say a sphere, we could modify the position of the sphere in another function, and the next time sphere is drawn, it would move.
 
+There are essentially 2 ways to represent objects in OpenGL, you can have a sphere or construct a more complex object by creating triangle faces which share edges. For example a cube would be made of 12 triangles (because it has 6 sides and 2 triangles are need to make a square), and every edge of a triangle would be shared with another triangle. A sphere however, can be done simply by defining the radius, since collision detection is quite simple with just a sphere and a ray, and constructing a sphere with triangles would be futile.
 
+However, we used the GL Utlility Toolkit to help with some of the dirty work regarding creating a cube with triangles and creating the sphere. GLUT also provided us with some nice functions to easily create the window.
 
 ### Implementation
 
