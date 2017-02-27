@@ -12,15 +12,15 @@ Software Systems
 
 ### Big Idea/Abstract
 
-Our goal for this project was to demonstrate the properties of the Brachistochrone Curve using our own physics engine. The Brachistochrone Curve is interesting because a ball at the top of the slope, will reach the bottom of the slope faster than any other type of curve or ramp. Also, the amount of time the ball takes to reach the bottom of the slope is constant, regardless of where the ball starts, whether it be at the very top, or a few inches from where the ball would naturally land.
+Our goal for this project was to demonstrate the properties of the Brachistochrone Curve using our own physics engine. The Brachistochrone Curve demonstrates two properties. First, a ball at the top of the slope will reach the bottom of the slope faster than any other type of curve or ramp. Second, the amount of time the ball takes to reach the bottom of the slope is constant, regardless of where the ball starts, whether it be at the very top, or a few inches from where the ball would naturally land.
 
-They are very interesting properties, however they only arise because the curve has such fine and specific detail. The more details an object has, the more triangles we need to use to represent it. This creates a problem because collision detection for objects constructed with triangles is very computationally expensive. In a perfect simulation the triangles which construct the curve would be infinitely small, however this is not realistic. We were left with a tradeoff between decreasing the number of triangles and sacrificing the fine detail that is necessary for the curve. Later research suggested that even the complex polygon collision detection algorithm we were considering using (Separating Axis Theorem) isn't reliable when detecting concave structures, such as curves.
+These two properties arise because of the curve having such fine and specific detail. The more details an object has, the more triangles we need to use to represent it. This creates a problem because collision detection for objects constructed with triangles is computationally expensive. In a perfect simulation, the triangles which construct the curve would be infinitely small, however this is not realistic. We were left with a tradeoff between decreasing the number of triangles and sacrificing the fine detail that is necessary for the curve. Later research suggested that even the complex polygon collision detection algorithm we were considering using (Separating Axis Theorem) isn't reliable when detecting concave structures, such as curves.
 
-Regardless of the difficulties with the curve, we wanted to demonstrate our personal physics engine, so we instead tried to focus of a ball realistically bouncing off of a surface, regardless the angle the ball was thrown or the angle of the surface.
+Regardless of the difficulties with the curve, we wanted to demonstrate our personal physics engine, so we instead tried to focus on a ball realistically bouncing off of a surface, regardless the angle the ball was thrown or the angle of the surface.
 
 ### Background
 
-Our physics engine is a simple version of one that might be used in a simulation or a video game, with the help of rendering software like OpenGL which we used. The basic idea of OpenGL and a physics engine are straight forward; you can create objects defined in classes or structures. For example take a look at Gameobject.h:
+Our physics engine is a simple version of one that might be used in a simulation or a video game, with the help of rendering software like OpenGL, which we used. The basic idea of OpenGL and a physics engine are straight forward; you can create objects defined in classes or structures. For example take a look at Gameobject.h:
 
 	class Gameobject{
 
@@ -68,7 +68,7 @@ Our physics engine is a simple version of one that might be used in a simulation
 		Vectorobject a; //Acceleration
 	};
 
-This is our parent class for all objects and provides as a good example for understanding OpenGL and physics engines. Everything we do in OpenGL is to model the real world, because that's the actual goal. Therefore like in the real world and real physics, every object has some position is space:
+This is our parent class for all objects and provides us a good example for understanding OpenGL and physics engines. Everything we do in OpenGL is to model the real world, because that's the actual goal. Therefore, like in the real world and real physics, every object has some position in space:
 									
 	float p[3];	//position represented with 3 coordinates
 
@@ -80,13 +80,13 @@ And every object is also accelerating in all 3 directions (again, might be 0):
 
 	Vectorobject a; //Acceleration
 					
-In a more complex engine there will probably even be fields to store the mass of the object, or the resistance of the material the object is made of. Nevertheless, with position, velocity, and acceleration we can accurately model simple projectile motion. With equations like 
+In a more complex engine, there will probably even be fields to store the mass of the object, or the resistance of the material the object is made of. Nonetheless, with position, velocity, and acceleration we can accurately model simple projectile motion with equations like 
 
 	v.final = v.initial + acceleration*delta.time
 					
-So with the limited information the objects have they can just the basic kinematic equations necessary to model real physics. But how does it show the simulation on the screen? That's where OpenGL comes in.
+So with the limited information the objects have they can just use the basic kinematic equations necessary to model real physics. But how does it show the simulation on the screen? That's where OpenGL comes in.
 
-As previously alluded to, OpenGL is a graphics library that makes it rather simple to create a new window and draw objects in, and is very efficient in doing so. The basic premise of how OpenGL works is again, modeled after real life. We have a camera (sometimes referred to as eye) "object", light objects, and all the objects you want to draw. All these things have positions on an x,y,z plane and the camera and lights also store they point they are facing. When the code is run, it simulates light (in the form of rays) bouncing away from the camera lens, each ray corresponding to a pixel in the window. When each ray hits something (or doesn't) it knows what it hits (or doesn't) and therefore knows what color to assign to the pixel (still does).
+As previously alluded to, OpenGL is a graphics library that makes it rather simple to create a new window and draw objects in, and is very efficient in doing so. The basic premise of how OpenGL works is again, modeled after real life. We have a camera (sometimes referred to as eye) "object", light objects, and all the objects you want to draw. All these things have positions on an x,y,z plane and the camera and lights also store the point they are facing. When the code is run, it simulates light (in the form of rays) bouncing away from the camera lens, each ray corresponding to a pixel in the window. When each ray hits something (or doesn't), it knows what it hits (or doesn't) and therefore knows what color to assign to the pixel (still does).
 
 This process is actually being done every frame, or about every 250ms. The magic comes from this little command:
 
@@ -159,7 +159,7 @@ We compromised by implementing a cross between bounding boxes and bounding spher
 
 
 ### Results
-Below you can see two recordings of our physics engine at work. The first is a ball that falls onto a flat plane and bounces until it comes to a resting position, the second is a ball bouncing down a 45 degree slope to illustrate the engine's ability to handle any angle of slope or of the ball's velocity.
+Below you can see two video recordings of our physics engine at work. The first is a ball that falls onto a flat plane and bounces until it comes to a resting position. The second is a ball bouncing down a 45 degree slope to illustrate the engine's ability to handle any angle of slope or of the ball's velocity.
 
 <a href="http://www.youtube.com/watch?feature=player_embedded&v=nYlgMGgmB3k
 " target="_blank"><img src="http://img.youtube.com/vi/nYlgMGgmB3k/0.jpg" 
