@@ -6,7 +6,7 @@
 
 ### Authors
 
-[Ted McNulty](tedmcnulty.com)
+[Ted McNulty](http://www.tedmcnulty.com)
 
 Cleophas Kalekem
 
