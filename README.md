@@ -1,5 +1,7 @@
 ## OpenGL Physics Engine
 
+[Project Page](https://tedmcn.github.io/SoftSysDocileDolphins/)
+
 ### Description
 
   This code is a physics engine written in C++, which handles gravity, terminal velocity, collision between a plane and a sphere, kinematic physics, and projectile motion. It is written to work with OpenGL and GL Utility Toolkit. There are two simulations prebuilt in the src folder. One, flat.cpp, is a ball bouncing on a flat plane, and the other, slope.cpp, is a ball bouncing down a slope. 
