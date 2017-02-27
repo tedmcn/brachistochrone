@@ -32,6 +32,8 @@ Our team is comprised of students that had little to no practice with graphics e
 " target="_blank"><img src="http://img.youtube.com/vi/nYlgMGgmB3k/0.jpg" 
 alt="IMAGE ALT TEXT HERE" width="240" height="180" border="10" /></a>
 
+[![IMAGE ALT TEXT HERE](http://img.youtube.com/vi/nYlgMGgmB3k/0.jpg)](http://www.youtube.com/watch?v=nYlgMGgmB3k)
+
 
 When we were only one weekend away from turning in this report, we had multiple options on how to complete this project, since we were not entirely sure yet if we could showcase a custom physics engine using the B curve. Our options included to:
 Go ahead with original plan with demonstrating B curve by figuring out how to detect collision using colliders, vectors, vertices, or faces.
